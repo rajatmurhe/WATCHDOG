@@ -1,0 +1,37 @@
+{
+  "algorithm": "SHA-256, exact full-file bytes",
+  "explanation_wording_compared": true,
+  "fresh_processes": true,
+  "identical": true,
+  "input_sha256": {
+    "notes": "875c57a896ac3dfac0f712f8865b287bb5d2bd5423d26e798297b74dce87e6dc",
+    "shipments": "1a2b4d66c4dc694111ba37b966486b5b0650df9ec8687402f3434117b140f4b6",
+    "template": "1ea902faca37bef6816e0878dc17bdb509a88f9ff9d4f101373e3af03994201f"
+  },
+  "per_run_sha256": [
+    {
+      "evidence_audit.json": "aff83c608bafb0b3095e8a26c1f491d92ef5125549791cebd492c7c9d19fc45d",
+      "full_analysis.csv": "1de4f56754f20295c92d23439400fca10308ecf0c186038106e7f47b78d3b641",
+      "manifest.json": "859649dafbef0a0408d00cd63f71b9de829f802313b764c4656c3d0b187dfc91",
+      "submission.csv": "7bf97646c160325d87e34eb175b5afc29d4bb2dd85f401cc83b2cfae6bc3ef26",
+      "usage.json": "92f468ed954468cba16d1f11c37dbf3f4f5e2fe2d498cb0e52e4e7993d702358"
+    },
+    {
+      "evidence_audit.json": "aff83c608bafb0b3095e8a26c1f491d92ef5125549791cebd492c7c9d19fc45d",
+      "full_analysis.csv": "1de4f56754f20295c92d23439400fca10308ecf0c186038106e7f47b78d3b641",
+      "manifest.json": "859649dafbef0a0408d00cd63f71b9de829f802313b764c4656c3d0b187dfc91",
+      "submission.csv": "7bf97646c160325d87e34eb175b5afc29d4bb2dd85f401cc83b2cfae6bc3ef26",
+      "usage.json": "92f468ed954468cba16d1f11c37dbf3f4f5e2fe2d498cb0e52e4e7993d702358"
+    },
+    {
+      "evidence_audit.json": "aff83c608bafb0b3095e8a26c1f491d92ef5125549791cebd492c7c9d19fc45d",
+      "full_analysis.csv": "1de4f56754f20295c92d23439400fca10308ecf0c186038106e7f47b78d3b641",
+      "manifest.json": "859649dafbef0a0408d00cd63f71b9de829f802313b764c4656c3d0b187dfc91",
+      "submission.csv": "7bf97646c160325d87e34eb175b5afc29d4bb2dd85f401cc83b2cfae6bc3ef26",
+      "usage.json": "92f468ed954468cba16d1f11c37dbf3f4f5e2fe2d498cb0e52e4e7993d702358"
+    }
+  ],
+  "retrieval": "embedding",
+  "runs": 3,
+  "source_unchanged_during_check": true
+}

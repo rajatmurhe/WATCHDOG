@@ -1,0 +1,1161 @@
+[
+  {
+    "candidates": [
+      {
+        "accepted": true,
+        "covered_shipments_days": 5,
+        "detail": "festival demand and limited trucks caused a temporary surcharge",
+        "end": "2025-01-26",
+        "note_id": "N002",
+        "observed_shipments_days": 5,
+        "score": 0.6509562,
+        "source_fingerprint": "53c2237e55225a0c9e7511c08220005eb5fc225ee62e3a9e90b1693394e0df25",
+        "start": "2025-01-20"
+      },
+      {
+        "accepted": false,
+        "covered_shipments_days": 0,
+        "detail": "outside the evidence's effective dates",
+        "end": null,
+        "note_id": "N003",
+        "observed_shipments_days": 0,
+        "score": 0.5791112,
+        "source_fingerprint": "a2bb1afbff822e44af1fa77fdc98cb6c4098e9cb1e68886978b9155bd85d6e5a",
+        "start": null
+      },
+      {
+        "accepted": false,
+        "covered_shipments_days": 0,
+        "detail": "wrong directional route",
+        "end": null,
+        "note_id": "N001",
+        "observed_shipments_days": 0,
+        "score": 0.5087965,
+        "source_fingerprint": "bf5622c52b090af0d48f2e7a9559a883a43112a170675cecbe06ca9150212e75",
+        "start": null
+      },
+      {
+        "accepted": false,
+        "covered_shipments_days": 0,
+        "detail": "wrong directional route",
+        "end": null,
+        "note_id": "N005",
+        "observed_shipments_days": 0,
+        "score": 0.4836376,
+        "source_fingerprint": "fd15d0a00d95a3994500b13765c7c03e46b7d67d92122274f94b02886af16174",
+        "start": null
+      },
+      {
+        "accepted": false,
+        "covered_shipments_days": 0,
+        "detail": "wrong directional route",
+        "end": null,
+        "note_id": "N008",
+        "observed_shipments_days": 0,
+        "score": 0.4330147,
+        "source_fingerprint": "a4ebeae3e6e82ae7893023e425237351389bc25994b325dffb7cd0e370e1dc25",
+        "start": null
+      }
+    ],
+    "route": "Ahmedabad-Mumbai",
+    "week_of": "2025-01-20"
+  },
+  {
+    "candidates": [
+      {
+        "accepted": true,
+        "covered_shipments_days": 4,
+        "detail": "flood detours increased trip costs",
+        "end": "2025-03-08",
+        "note_id": "N001",
+        "observed_shipments_days": 4,
+        "score": 0.6454998,
+        "source_fingerprint": "bf5622c52b090af0d48f2e7a9559a883a43112a170675cecbe06ca9150212e75",
+        "start": "2025-02-24"
+      },
+      {
+        "accepted": false,
+        "covered_shipments_days": 0,
+        "detail": "outside the evidence's effective dates",
+        "end": null,
+        "note_id": "N003",
+        "observed_shipments_days": 0,
+        "score": 0.581135,
+        "source_fingerprint": "a2bb1afbff822e44af1fa77fdc98cb6c4098e9cb1e68886978b9155bd85d6e5a",
+        "start": null
+      },
+      {
+        "accepted": false,
+        "covered_shipments_days": 0,
+        "detail": "wrong directional route",
+        "end": null,
+        "note_id": "N002",
+        "observed_shipments_days": 0,
+        "score": 0.5226828,
+        "source_fingerprint": "53c2237e55225a0c9e7511c08220005eb5fc225ee62e3a9e90b1693394e0df25",
+        "start": null
+      },
+      {
+        "accepted": false,
+        "covered_shipments_days": 0,
+        "detail": "no supported, unambiguous cost-increase assertion; manual review required",
+        "end": null,
+        "note_id": "N009",
+        "observed_shipments_days": 0,
+        "score": 0.474757,
+        "source_fingerprint": "7313f23904f325486d5434e5c2edde43a6166fcdb33978ded615276f35e89609",
+        "start": null
+      },
+      {
+        "accepted": false,
+        "covered_shipments_days": 0,
+        "detail": "no supported, unambiguous cost-increase assertion; manual review required",
+        "end": null,
+        "note_id": "N006",
+        "observed_shipments_days": 0,
+        "score": 0.448264,
+        "source_fingerprint": "34e05946df2f7d22422601c42e7d1b08717c9ea574eaa10ccc5d28ed0c92618b",
+        "start": null
+      }
+    ],
+    "route": "Chennai-Bangalore",
+    "week_of": "2025-02-24"
+  },
+  {
+    "candidates": [
+      {
+        "accepted": true,
+        "covered_shipments_days": 4,
+        "detail": "flood detours increased trip costs",
+        "end": "2025-03-08",
+        "note_id": "N001",
+        "observed_shipments_days": 5,
+        "score": 0.6401422,
+        "source_fingerprint": "bf5622c52b090af0d48f2e7a9559a883a43112a170675cecbe06ca9150212e75",
+        "start": "2025-02-24"
+      },
+      {
+        "accepted": false,
+        "covered_shipments_days": 0,
+        "detail": "outside the evidence's effective dates",
+        "end": null,
+        "note_id": "N003",
+        "observed_shipments_days": 0,
+        "score": 0.5841842,
+        "source_fingerprint": "a2bb1afbff822e44af1fa77fdc98cb6c4098e9cb1e68886978b9155bd85d6e5a",
+        "start": null
+      },
+      {
+        "accepted": false,
+        "covered_shipments_days": 0,
+        "detail": "wrong directional route",
+        "end": null,
+        "note_id": "N002",
+        "observed_shipments_days": 0,
+        "score": 0.5154414,
+        "source_fingerprint": "53c2237e55225a0c9e7511c08220005eb5fc225ee62e3a9e90b1693394e0df25",
+        "start": null
+      },
+      {
+        "accepted": false,
+        "covered_shipments_days": 0,
+        "detail": "no supported, unambiguous cost-increase assertion; manual review required",
+        "end": null,
+        "note_id": "N009",
+        "observed_shipments_days": 0,
+        "score": 0.4679851,
+        "source_fingerprint": "7313f23904f325486d5434e5c2edde43a6166fcdb33978ded615276f35e89609",
+        "start": null
+      },
+      {
+        "accepted": false,
+        "covered_shipments_days": 0,
+        "detail": "no supported, unambiguous cost-increase assertion; manual review required",
+        "end": null,
+        "note_id": "N006",
+        "observed_shipments_days": 0,
+        "score": 0.4485959,
+        "source_fingerprint": "34e05946df2f7d22422601c42e7d1b08717c9ea574eaa10ccc5d28ed0c92618b",
+        "start": null
+      }
+    ],
+    "route": "Chennai-Bangalore",
+    "week_of": "2025-03-03"
+  },
+  {
+    "candidates": [
+      {
+        "accepted": false,
+        "covered_shipments_days": 0,
+        "detail": "outside the evidence's effective dates",
+        "end": null,
+        "note_id": "N001",
+        "observed_shipments_days": 0,
+        "score": 0.6407394,
+        "source_fingerprint": "bf5622c52b090af0d48f2e7a9559a883a43112a170675cecbe06ca9150212e75",
+        "start": null
+      },
+      {
+        "accepted": false,
+        "covered_shipments_days": 0,
+        "detail": "outside the evidence's effective dates",
+        "end": null,
+        "note_id": "N003",
+        "observed_shipments_days": 0,
+        "score": 0.5857809,
+        "source_fingerprint": "a2bb1afbff822e44af1fa77fdc98cb6c4098e9cb1e68886978b9155bd85d6e5a",
+        "start": null
+      },
+      {
+        "accepted": false,
+        "covered_shipments_days": 0,
+        "detail": "wrong directional route",
+        "end": null,
+        "note_id": "N002",
+        "observed_shipments_days": 0,
+        "score": 0.5148013,
+        "source_fingerprint": "53c2237e55225a0c9e7511c08220005eb5fc225ee62e3a9e90b1693394e0df25",
+        "start": null
+      },
+      {
+        "accepted": false,
+        "covered_shipments_days": 0,
+        "detail": "no supported, unambiguous cost-increase assertion; manual review required",
+        "end": null,
+        "note_id": "N009",
+        "observed_shipments_days": 0,
+        "score": 0.471043,
+        "source_fingerprint": "7313f23904f325486d5434e5c2edde43a6166fcdb33978ded615276f35e89609",
+        "start": null
+      },
+      {
+        "accepted": false,
+        "covered_shipments_days": 0,
+        "detail": "no supported, unambiguous cost-increase assertion; manual review required",
+        "end": null,
+        "note_id": "N006",
+        "observed_shipments_days": 0,
+        "score": 0.4503028,
+        "source_fingerprint": "34e05946df2f7d22422601c42e7d1b08717c9ea574eaa10ccc5d28ed0c92618b",
+        "start": null
+      }
+    ],
+    "route": "Chennai-Bangalore",
+    "week_of": "2025-03-10"
+  },
+  {
+    "candidates": [
+      {
+        "accepted": false,
+        "covered_shipments_days": 0,
+        "detail": "outside the evidence's effective dates",
+        "end": null,
+        "note_id": "N001",
+        "observed_shipments_days": 0,
+        "score": 0.6363583,
+        "source_fingerprint": "bf5622c52b090af0d48f2e7a9559a883a43112a170675cecbe06ca9150212e75",
+        "start": null
+      },
+      {
+        "accepted": false,
+        "covered_shipments_days": 0,
+        "detail": "outside the evidence's effective dates",
+        "end": null,
+        "note_id": "N003",
+        "observed_shipments_days": 0,
+        "score": 0.5832658,
+        "source_fingerprint": "a2bb1afbff822e44af1fa77fdc98cb6c4098e9cb1e68886978b9155bd85d6e5a",
+        "start": null
+      },
+      {
+        "accepted": false,
+        "covered_shipments_days": 0,
+        "detail": "wrong directional route",
+        "end": null,
+        "note_id": "N002",
+        "observed_shipments_days": 0,
+        "score": 0.5138086,
+        "source_fingerprint": "53c2237e55225a0c9e7511c08220005eb5fc225ee62e3a9e90b1693394e0df25",
+        "start": null
+      },
+      {
+        "accepted": false,
+        "covered_shipments_days": 0,
+        "detail": "no supported, unambiguous cost-increase assertion; manual review required",
+        "end": null,
+        "note_id": "N009",
+        "observed_shipments_days": 0,
+        "score": 0.4691235,
+        "source_fingerprint": "7313f23904f325486d5434e5c2edde43a6166fcdb33978ded615276f35e89609",
+        "start": null
+      },
+      {
+        "accepted": false,
+        "covered_shipments_days": 0,
+        "detail": "no supported, unambiguous cost-increase assertion; manual review required",
+        "end": null,
+        "note_id": "N006",
+        "observed_shipments_days": 0,
+        "score": 0.4459874,
+        "source_fingerprint": "34e05946df2f7d22422601c42e7d1b08717c9ea574eaa10ccc5d28ed0c92618b",
+        "start": null
+      }
+    ],
+    "route": "Chennai-Bangalore",
+    "week_of": "2025-03-17"
+  },
+  {
+    "candidates": [
+      {
+        "accepted": false,
+        "covered_shipments_days": 0,
+        "detail": "outside the evidence's effective dates",
+        "end": null,
+        "note_id": "N003",
+        "observed_shipments_days": 0,
+        "score": 0.5447211,
+        "source_fingerprint": "a2bb1afbff822e44af1fa77fdc98cb6c4098e9cb1e68886978b9155bd85d6e5a",
+        "start": null
+      },
+      {
+        "accepted": false,
+        "covered_shipments_days": 0,
+        "detail": "wrong directional route",
+        "end": null,
+        "note_id": "N002",
+        "observed_shipments_days": 0,
+        "score": 0.5412624,
+        "source_fingerprint": "53c2237e55225a0c9e7511c08220005eb5fc225ee62e3a9e90b1693394e0df25",
+        "start": null
+      },
+      {
+        "accepted": false,
+        "covered_shipments_days": 0,
+        "detail": "no supported, unambiguous cost-increase assertion; manual review required",
+        "end": null,
+        "note_id": "N007",
+        "observed_shipments_days": 0,
+        "score": 0.492018,
+        "source_fingerprint": "dc7b5af544c06c3174e51834d06c40709a6aa5fcfc7b0d4004a306940f7e896a",
+        "start": null
+      },
+      {
+        "accepted": false,
+        "covered_shipments_days": 0,
+        "detail": "wrong directional route",
+        "end": null,
+        "note_id": "N001",
+        "observed_shipments_days": 0,
+        "score": 0.4720823,
+        "source_fingerprint": "bf5622c52b090af0d48f2e7a9559a883a43112a170675cecbe06ca9150212e75",
+        "start": null
+      },
+      {
+        "accepted": false,
+        "covered_shipments_days": 0,
+        "detail": "wrong directional route",
+        "end": null,
+        "note_id": "N005",
+        "observed_shipments_days": 0,
+        "score": 0.4708108,
+        "source_fingerprint": "fd15d0a00d95a3994500b13765c7c03e46b7d67d92122274f94b02886af16174",
+        "start": null
+      }
+    ],
+    "route": "Delhi-Jaipur",
+    "week_of": "2024-11-11"
+  },
+  {
+    "candidates": [
+      {
+        "accepted": false,
+        "covered_shipments_days": 0,
+        "detail": "outside the evidence's effective dates",
+        "end": null,
+        "note_id": "N003",
+        "observed_shipments_days": 0,
+        "score": 0.5518639,
+        "source_fingerprint": "a2bb1afbff822e44af1fa77fdc98cb6c4098e9cb1e68886978b9155bd85d6e5a",
+        "start": null
+      },
+      {
+        "accepted": false,
+        "covered_shipments_days": 0,
+        "detail": "wrong directional route",
+        "end": null,
+        "note_id": "N002",
+        "observed_shipments_days": 0,
+        "score": 0.5455191,
+        "source_fingerprint": "53c2237e55225a0c9e7511c08220005eb5fc225ee62e3a9e90b1693394e0df25",
+        "start": null
+      },
+      {
+        "accepted": false,
+        "covered_shipments_days": 0,
+        "detail": "no supported, unambiguous cost-increase assertion; manual review required",
+        "end": null,
+        "note_id": "N007",
+        "observed_shipments_days": 0,
+        "score": 0.4979638,
+        "source_fingerprint": "dc7b5af544c06c3174e51834d06c40709a6aa5fcfc7b0d4004a306940f7e896a",
+        "start": null
+      },
+      {
+        "accepted": false,
+        "covered_shipments_days": 0,
+        "detail": "wrong directional route",
+        "end": null,
+        "note_id": "N001",
+        "observed_shipments_days": 0,
+        "score": 0.4758723,
+        "source_fingerprint": "bf5622c52b090af0d48f2e7a9559a883a43112a170675cecbe06ca9150212e75",
+        "start": null
+      },
+      {
+        "accepted": false,
+        "covered_shipments_days": 0,
+        "detail": "wrong directional route",
+        "end": null,
+        "note_id": "N005",
+        "observed_shipments_days": 0,
+        "score": 0.4736763,
+        "source_fingerprint": "fd15d0a00d95a3994500b13765c7c03e46b7d67d92122274f94b02886af16174",
+        "start": null
+      }
+    ],
+    "route": "Delhi-Jaipur",
+    "week_of": "2024-11-18"
+  },
+  {
+    "candidates": [
+      {
+        "accepted": false,
+        "covered_shipments_days": 0,
+        "detail": "outside the evidence's effective dates",
+        "end": null,
+        "note_id": "N003",
+        "observed_shipments_days": 0,
+        "score": 0.5859194,
+        "source_fingerprint": "a2bb1afbff822e44af1fa77fdc98cb6c4098e9cb1e68886978b9155bd85d6e5a",
+        "start": null
+      },
+      {
+        "accepted": false,
+        "covered_shipments_days": 0,
+        "detail": "wrong directional route",
+        "end": null,
+        "note_id": "N002",
+        "observed_shipments_days": 0,
+        "score": 0.5135753,
+        "source_fingerprint": "53c2237e55225a0c9e7511c08220005eb5fc225ee62e3a9e90b1693394e0df25",
+        "start": null
+      },
+      {
+        "accepted": false,
+        "covered_shipments_days": 0,
+        "detail": "wrong directional route",
+        "end": null,
+        "note_id": "N001",
+        "observed_shipments_days": 0,
+        "score": 0.4854715,
+        "source_fingerprint": "bf5622c52b090af0d48f2e7a9559a883a43112a170675cecbe06ca9150212e75",
+        "start": null
+      },
+      {
+        "accepted": false,
+        "covered_shipments_days": 0,
+        "detail": "wrong directional route",
+        "end": null,
+        "note_id": "N005",
+        "observed_shipments_days": 0,
+        "score": 0.4559143,
+        "source_fingerprint": "fd15d0a00d95a3994500b13765c7c03e46b7d67d92122274f94b02886af16174",
+        "start": null
+      },
+      {
+        "accepted": false,
+        "covered_shipments_days": 0,
+        "detail": "no supported, unambiguous cost-increase assertion; manual review required",
+        "end": null,
+        "note_id": "N006",
+        "observed_shipments_days": 0,
+        "score": 0.4320677,
+        "source_fingerprint": "34e05946df2f7d22422601c42e7d1b08717c9ea574eaa10ccc5d28ed0c92618b",
+        "start": null
+      }
+    ],
+    "route": "Mumbai-Pune",
+    "week_of": "2025-06-23"
+  },
+  {
+    "candidates": [
+      {
+        "accepted": false,
+        "covered_shipments_days": 0,
+        "detail": "outside the evidence's effective dates",
+        "end": null,
+        "note_id": "N003",
+        "observed_shipments_days": 0,
+        "score": 0.5855364,
+        "source_fingerprint": "a2bb1afbff822e44af1fa77fdc98cb6c4098e9cb1e68886978b9155bd85d6e5a",
+        "start": null
+      },
+      {
+        "accepted": false,
+        "covered_shipments_days": 0,
+        "detail": "wrong directional route",
+        "end": null,
+        "note_id": "N002",
+        "observed_shipments_days": 0,
+        "score": 0.5062724,
+        "source_fingerprint": "53c2237e55225a0c9e7511c08220005eb5fc225ee62e3a9e90b1693394e0df25",
+        "start": null
+      },
+      {
+        "accepted": false,
+        "covered_shipments_days": 0,
+        "detail": "wrong directional route",
+        "end": null,
+        "note_id": "N001",
+        "observed_shipments_days": 0,
+        "score": 0.4797409,
+        "source_fingerprint": "bf5622c52b090af0d48f2e7a9559a883a43112a170675cecbe06ca9150212e75",
+        "start": null
+      },
+      {
+        "accepted": false,
+        "covered_shipments_days": 0,
+        "detail": "wrong directional route",
+        "end": null,
+        "note_id": "N005",
+        "observed_shipments_days": 0,
+        "score": 0.4468396,
+        "source_fingerprint": "fd15d0a00d95a3994500b13765c7c03e46b7d67d92122274f94b02886af16174",
+        "start": null
+      },
+      {
+        "accepted": false,
+        "covered_shipments_days": 0,
+        "detail": "no supported, unambiguous cost-increase assertion; manual review required",
+        "end": null,
+        "note_id": "N006",
+        "observed_shipments_days": 0,
+        "score": 0.4276875,
+        "source_fingerprint": "34e05946df2f7d22422601c42e7d1b08717c9ea574eaa10ccc5d28ed0c92618b",
+        "start": null
+      }
+    ],
+    "route": "Mumbai-Pune",
+    "week_of": "2025-09-15"
+  },
+  {
+    "candidates": [
+      {
+        "accepted": false,
+        "covered_shipments_days": 0,
+        "detail": "outside the evidence's effective dates",
+        "end": null,
+        "note_id": "N003",
+        "observed_shipments_days": 0,
+        "score": 0.585475,
+        "source_fingerprint": "a2bb1afbff822e44af1fa77fdc98cb6c4098e9cb1e68886978b9155bd85d6e5a",
+        "start": null
+      },
+      {
+        "accepted": false,
+        "covered_shipments_days": 0,
+        "detail": "wrong directional route",
+        "end": null,
+        "note_id": "N002",
+        "observed_shipments_days": 0,
+        "score": 0.5097912,
+        "source_fingerprint": "53c2237e55225a0c9e7511c08220005eb5fc225ee62e3a9e90b1693394e0df25",
+        "start": null
+      },
+      {
+        "accepted": false,
+        "covered_shipments_days": 0,
+        "detail": "wrong directional route",
+        "end": null,
+        "note_id": "N001",
+        "observed_shipments_days": 0,
+        "score": 0.48316,
+        "source_fingerprint": "bf5622c52b090af0d48f2e7a9559a883a43112a170675cecbe06ca9150212e75",
+        "start": null
+      },
+      {
+        "accepted": false,
+        "covered_shipments_days": 0,
+        "detail": "wrong directional route",
+        "end": null,
+        "note_id": "N005",
+        "observed_shipments_days": 0,
+        "score": 0.4498487,
+        "source_fingerprint": "fd15d0a00d95a3994500b13765c7c03e46b7d67d92122274f94b02886af16174",
+        "start": null
+      },
+      {
+        "accepted": false,
+        "covered_shipments_days": 0,
+        "detail": "no supported, unambiguous cost-increase assertion; manual review required",
+        "end": null,
+        "note_id": "N006",
+        "observed_shipments_days": 0,
+        "score": 0.4322057,
+        "source_fingerprint": "34e05946df2f7d22422601c42e7d1b08717c9ea574eaa10ccc5d28ed0c92618b",
+        "start": null
+      }
+    ],
+    "route": "Mumbai-Pune",
+    "week_of": "2025-10-06"
+  },
+  {
+    "candidates": [
+      {
+        "accepted": false,
+        "covered_shipments_days": 0,
+        "detail": "outside the evidence's effective dates",
+        "end": null,
+        "note_id": "N003",
+        "observed_shipments_days": 0,
+        "score": 0.5917932,
+        "source_fingerprint": "a2bb1afbff822e44af1fa77fdc98cb6c4098e9cb1e68886978b9155bd85d6e5a",
+        "start": null
+      },
+      {
+        "accepted": false,
+        "covered_shipments_days": 0,
+        "detail": "wrong directional route",
+        "end": null,
+        "note_id": "N002",
+        "observed_shipments_days": 0,
+        "score": 0.5142525,
+        "source_fingerprint": "53c2237e55225a0c9e7511c08220005eb5fc225ee62e3a9e90b1693394e0df25",
+        "start": null
+      },
+      {
+        "accepted": false,
+        "covered_shipments_days": 0,
+        "detail": "wrong directional route",
+        "end": null,
+        "note_id": "N001",
+        "observed_shipments_days": 0,
+        "score": 0.485335,
+        "source_fingerprint": "bf5622c52b090af0d48f2e7a9559a883a43112a170675cecbe06ca9150212e75",
+        "start": null
+      },
+      {
+        "accepted": false,
+        "covered_shipments_days": 0,
+        "detail": "wrong directional route",
+        "end": null,
+        "note_id": "N005",
+        "observed_shipments_days": 0,
+        "score": 0.4564395,
+        "source_fingerprint": "fd15d0a00d95a3994500b13765c7c03e46b7d67d92122274f94b02886af16174",
+        "start": null
+      },
+      {
+        "accepted": false,
+        "covered_shipments_days": 0,
+        "detail": "no supported, unambiguous cost-increase assertion; manual review required",
+        "end": null,
+        "note_id": "N006",
+        "observed_shipments_days": 0,
+        "score": 0.4355909,
+        "source_fingerprint": "34e05946df2f7d22422601c42e7d1b08717c9ea574eaa10ccc5d28ed0c92618b",
+        "start": null
+      }
+    ],
+    "route": "Mumbai-Pune",
+    "week_of": "2025-10-20"
+  },
+  {
+    "candidates": [
+      {
+        "accepted": false,
+        "covered_shipments_days": 0,
+        "detail": "outside the evidence's effective dates",
+        "end": null,
+        "note_id": "N003",
+        "observed_shipments_days": 0,
+        "score": 0.5870658,
+        "source_fingerprint": "a2bb1afbff822e44af1fa77fdc98cb6c4098e9cb1e68886978b9155bd85d6e5a",
+        "start": null
+      },
+      {
+        "accepted": false,
+        "covered_shipments_days": 0,
+        "detail": "wrong directional route",
+        "end": null,
+        "note_id": "N002",
+        "observed_shipments_days": 0,
+        "score": 0.5076452,
+        "source_fingerprint": "53c2237e55225a0c9e7511c08220005eb5fc225ee62e3a9e90b1693394e0df25",
+        "start": null
+      },
+      {
+        "accepted": false,
+        "covered_shipments_days": 0,
+        "detail": "wrong directional route",
+        "end": null,
+        "note_id": "N001",
+        "observed_shipments_days": 0,
+        "score": 0.4844655,
+        "source_fingerprint": "bf5622c52b090af0d48f2e7a9559a883a43112a170675cecbe06ca9150212e75",
+        "start": null
+      },
+      {
+        "accepted": false,
+        "covered_shipments_days": 0,
+        "detail": "wrong directional route",
+        "end": null,
+        "note_id": "N005",
+        "observed_shipments_days": 0,
+        "score": 0.4578921,
+        "source_fingerprint": "fd15d0a00d95a3994500b13765c7c03e46b7d67d92122274f94b02886af16174",
+        "start": null
+      },
+      {
+        "accepted": false,
+        "covered_shipments_days": 0,
+        "detail": "no supported, unambiguous cost-increase assertion; manual review required",
+        "end": null,
+        "note_id": "N006",
+        "observed_shipments_days": 0,
+        "score": 0.4313872,
+        "source_fingerprint": "34e05946df2f7d22422601c42e7d1b08717c9ea574eaa10ccc5d28ed0c92618b",
+        "start": null
+      }
+    ],
+    "route": "Mumbai-Pune",
+    "week_of": "2025-10-27"
+  },
+  {
+    "candidates": [
+      {
+        "accepted": false,
+        "covered_shipments_days": 0,
+        "detail": "outside the evidence's effective dates",
+        "end": null,
+        "note_id": "N003",
+        "observed_shipments_days": 0,
+        "score": 0.5796267,
+        "source_fingerprint": "a2bb1afbff822e44af1fa77fdc98cb6c4098e9cb1e68886978b9155bd85d6e5a",
+        "start": null
+      },
+      {
+        "accepted": false,
+        "covered_shipments_days": 0,
+        "detail": "wrong directional route",
+        "end": null,
+        "note_id": "N002",
+        "observed_shipments_days": 0,
+        "score": 0.502327,
+        "source_fingerprint": "53c2237e55225a0c9e7511c08220005eb5fc225ee62e3a9e90b1693394e0df25",
+        "start": null
+      },
+      {
+        "accepted": false,
+        "covered_shipments_days": 0,
+        "detail": "wrong directional route",
+        "end": null,
+        "note_id": "N001",
+        "observed_shipments_days": 0,
+        "score": 0.4760274,
+        "source_fingerprint": "bf5622c52b090af0d48f2e7a9559a883a43112a170675cecbe06ca9150212e75",
+        "start": null
+      },
+      {
+        "accepted": false,
+        "covered_shipments_days": 0,
+        "detail": "wrong directional route",
+        "end": null,
+        "note_id": "N005",
+        "observed_shipments_days": 0,
+        "score": 0.4477762,
+        "source_fingerprint": "fd15d0a00d95a3994500b13765c7c03e46b7d67d92122274f94b02886af16174",
+        "start": null
+      },
+      {
+        "accepted": false,
+        "covered_shipments_days": 0,
+        "detail": "no supported, unambiguous cost-increase assertion; manual review required",
+        "end": null,
+        "note_id": "N006",
+        "observed_shipments_days": 0,
+        "score": 0.430149,
+        "source_fingerprint": "34e05946df2f7d22422601c42e7d1b08717c9ea574eaa10ccc5d28ed0c92618b",
+        "start": null
+      }
+    ],
+    "route": "Mumbai-Pune",
+    "week_of": "2025-11-03"
+  },
+  {
+    "candidates": [
+      {
+        "accepted": false,
+        "covered_shipments_days": 0,
+        "detail": "outside the evidence's effective dates",
+        "end": null,
+        "note_id": "N003",
+        "observed_shipments_days": 0,
+        "score": 0.5800409,
+        "source_fingerprint": "a2bb1afbff822e44af1fa77fdc98cb6c4098e9cb1e68886978b9155bd85d6e5a",
+        "start": null
+      },
+      {
+        "accepted": false,
+        "covered_shipments_days": 0,
+        "detail": "wrong directional route",
+        "end": null,
+        "note_id": "N002",
+        "observed_shipments_days": 0,
+        "score": 0.5023434,
+        "source_fingerprint": "53c2237e55225a0c9e7511c08220005eb5fc225ee62e3a9e90b1693394e0df25",
+        "start": null
+      },
+      {
+        "accepted": false,
+        "covered_shipments_days": 0,
+        "detail": "wrong directional route",
+        "end": null,
+        "note_id": "N001",
+        "observed_shipments_days": 0,
+        "score": 0.4748703,
+        "source_fingerprint": "bf5622c52b090af0d48f2e7a9559a883a43112a170675cecbe06ca9150212e75",
+        "start": null
+      },
+      {
+        "accepted": false,
+        "covered_shipments_days": 0,
+        "detail": "wrong directional route",
+        "end": null,
+        "note_id": "N005",
+        "observed_shipments_days": 0,
+        "score": 0.4483001,
+        "source_fingerprint": "fd15d0a00d95a3994500b13765c7c03e46b7d67d92122274f94b02886af16174",
+        "start": null
+      },
+      {
+        "accepted": false,
+        "covered_shipments_days": 0,
+        "detail": "no supported, unambiguous cost-increase assertion; manual review required",
+        "end": null,
+        "note_id": "N006",
+        "observed_shipments_days": 0,
+        "score": 0.4274175,
+        "source_fingerprint": "34e05946df2f7d22422601c42e7d1b08717c9ea574eaa10ccc5d28ed0c92618b",
+        "start": null
+      }
+    ],
+    "route": "Mumbai-Pune",
+    "week_of": "2025-11-17"
+  },
+  {
+    "candidates": [
+      {
+        "accepted": false,
+        "covered_shipments_days": 0,
+        "detail": "outside the evidence's effective dates",
+        "end": null,
+        "note_id": "N003",
+        "observed_shipments_days": 0,
+        "score": 0.5777307,
+        "source_fingerprint": "a2bb1afbff822e44af1fa77fdc98cb6c4098e9cb1e68886978b9155bd85d6e5a",
+        "start": null
+      },
+      {
+        "accepted": false,
+        "covered_shipments_days": 0,
+        "detail": "wrong directional route",
+        "end": null,
+        "note_id": "N002",
+        "observed_shipments_days": 0,
+        "score": 0.5093238,
+        "source_fingerprint": "53c2237e55225a0c9e7511c08220005eb5fc225ee62e3a9e90b1693394e0df25",
+        "start": null
+      },
+      {
+        "accepted": false,
+        "covered_shipments_days": 0,
+        "detail": "wrong directional route",
+        "end": null,
+        "note_id": "N001",
+        "observed_shipments_days": 0,
+        "score": 0.4812776,
+        "source_fingerprint": "bf5622c52b090af0d48f2e7a9559a883a43112a170675cecbe06ca9150212e75",
+        "start": null
+      },
+      {
+        "accepted": false,
+        "covered_shipments_days": 0,
+        "detail": "wrong directional route",
+        "end": null,
+        "note_id": "N005",
+        "observed_shipments_days": 0,
+        "score": 0.4584553,
+        "source_fingerprint": "fd15d0a00d95a3994500b13765c7c03e46b7d67d92122274f94b02886af16174",
+        "start": null
+      },
+      {
+        "accepted": false,
+        "covered_shipments_days": 0,
+        "detail": "no supported, unambiguous cost-increase assertion; manual review required",
+        "end": null,
+        "note_id": "N006",
+        "observed_shipments_days": 0,
+        "score": 0.4299942,
+        "source_fingerprint": "34e05946df2f7d22422601c42e7d1b08717c9ea574eaa10ccc5d28ed0c92618b",
+        "start": null
+      }
+    ],
+    "route": "Mumbai-Pune",
+    "week_of": "2025-11-24"
+  },
+  {
+    "candidates": [
+      {
+        "accepted": false,
+        "covered_shipments_days": 0,
+        "detail": "outside the evidence's effective dates",
+        "end": null,
+        "note_id": "N003",
+        "observed_shipments_days": 0,
+        "score": 0.581067,
+        "source_fingerprint": "a2bb1afbff822e44af1fa77fdc98cb6c4098e9cb1e68886978b9155bd85d6e5a",
+        "start": null
+      },
+      {
+        "accepted": false,
+        "covered_shipments_days": 0,
+        "detail": "wrong directional route",
+        "end": null,
+        "note_id": "N002",
+        "observed_shipments_days": 0,
+        "score": 0.5106258,
+        "source_fingerprint": "53c2237e55225a0c9e7511c08220005eb5fc225ee62e3a9e90b1693394e0df25",
+        "start": null
+      },
+      {
+        "accepted": false,
+        "covered_shipments_days": 0,
+        "detail": "wrong directional route",
+        "end": null,
+        "note_id": "N001",
+        "observed_shipments_days": 0,
+        "score": 0.4877386,
+        "source_fingerprint": "bf5622c52b090af0d48f2e7a9559a883a43112a170675cecbe06ca9150212e75",
+        "start": null
+      },
+      {
+        "accepted": false,
+        "covered_shipments_days": 0,
+        "detail": "wrong directional route",
+        "end": null,
+        "note_id": "N005",
+        "observed_shipments_days": 0,
+        "score": 0.457366,
+        "source_fingerprint": "fd15d0a00d95a3994500b13765c7c03e46b7d67d92122274f94b02886af16174",
+        "start": null
+      },
+      {
+        "accepted": false,
+        "covered_shipments_days": 0,
+        "detail": "no supported, unambiguous cost-increase assertion; manual review required",
+        "end": null,
+        "note_id": "N006",
+        "observed_shipments_days": 0,
+        "score": 0.4355745,
+        "source_fingerprint": "34e05946df2f7d22422601c42e7d1b08717c9ea574eaa10ccc5d28ed0c92618b",
+        "start": null
+      }
+    ],
+    "route": "Mumbai-Pune",
+    "week_of": "2025-12-01"
+  },
+  {
+    "candidates": [
+      {
+        "accepted": false,
+        "covered_shipments_days": 0,
+        "detail": "outside the evidence's effective dates",
+        "end": null,
+        "note_id": "N003",
+        "observed_shipments_days": 0,
+        "score": 0.5796342,
+        "source_fingerprint": "a2bb1afbff822e44af1fa77fdc98cb6c4098e9cb1e68886978b9155bd85d6e5a",
+        "start": null
+      },
+      {
+        "accepted": false,
+        "covered_shipments_days": 0,
+        "detail": "wrong directional route",
+        "end": null,
+        "note_id": "N002",
+        "observed_shipments_days": 0,
+        "score": 0.5067708,
+        "source_fingerprint": "53c2237e55225a0c9e7511c08220005eb5fc225ee62e3a9e90b1693394e0df25",
+        "start": null
+      },
+      {
+        "accepted": false,
+        "covered_shipments_days": 0,
+        "detail": "wrong directional route",
+        "end": null,
+        "note_id": "N001",
+        "observed_shipments_days": 0,
+        "score": 0.4844872,
+        "source_fingerprint": "bf5622c52b090af0d48f2e7a9559a883a43112a170675cecbe06ca9150212e75",
+        "start": null
+      },
+      {
+        "accepted": false,
+        "covered_shipments_days": 0,
+        "detail": "wrong directional route",
+        "end": null,
+        "note_id": "N005",
+        "observed_shipments_days": 0,
+        "score": 0.4522795,
+        "source_fingerprint": "fd15d0a00d95a3994500b13765c7c03e46b7d67d92122274f94b02886af16174",
+        "start": null
+      },
+      {
+        "accepted": false,
+        "covered_shipments_days": 0,
+        "detail": "no supported, unambiguous cost-increase assertion; manual review required",
+        "end": null,
+        "note_id": "N006",
+        "observed_shipments_days": 0,
+        "score": 0.4320872,
+        "source_fingerprint": "34e05946df2f7d22422601c42e7d1b08717c9ea574eaa10ccc5d28ed0c92618b",
+        "start": null
+      }
+    ],
+    "route": "Mumbai-Pune",
+    "week_of": "2025-12-08"
+  },
+  {
+    "candidates": [
+      {
+        "accepted": false,
+        "covered_shipments_days": 0,
+        "detail": "outside the evidence's effective dates",
+        "end": null,
+        "note_id": "N003",
+        "observed_shipments_days": 0,
+        "score": 0.5831868,
+        "source_fingerprint": "a2bb1afbff822e44af1fa77fdc98cb6c4098e9cb1e68886978b9155bd85d6e5a",
+        "start": null
+      },
+      {
+        "accepted": false,
+        "covered_shipments_days": 0,
+        "detail": "wrong directional route",
+        "end": null,
+        "note_id": "N002",
+        "observed_shipments_days": 0,
+        "score": 0.5114293,
+        "source_fingerprint": "53c2237e55225a0c9e7511c08220005eb5fc225ee62e3a9e90b1693394e0df25",
+        "start": null
+      },
+      {
+        "accepted": false,
+        "covered_shipments_days": 0,
+        "detail": "wrong directional route",
+        "end": null,
+        "note_id": "N001",
+        "observed_shipments_days": 0,
+        "score": 0.4819642,
+        "source_fingerprint": "bf5622c52b090af0d48f2e7a9559a883a43112a170675cecbe06ca9150212e75",
+        "start": null
+      },
+      {
+        "accepted": false,
+        "covered_shipments_days": 0,
+        "detail": "wrong directional route",
+        "end": null,
+        "note_id": "N005",
+        "observed_shipments_days": 0,
+        "score": 0.454081,
+        "source_fingerprint": "fd15d0a00d95a3994500b13765c7c03e46b7d67d92122274f94b02886af16174",
+        "start": null
+      },
+      {
+        "accepted": false,
+        "covered_shipments_days": 0,
+        "detail": "no supported, unambiguous cost-increase assertion; manual review required",
+        "end": null,
+        "note_id": "N006",
+        "observed_shipments_days": 0,
+        "score": 0.4299406,
+        "source_fingerprint": "34e05946df2f7d22422601c42e7d1b08717c9ea574eaa10ccc5d28ed0c92618b",
+        "start": null
+      }
+    ],
+    "route": "Mumbai-Pune",
+    "week_of": "2025-12-15"
+  },
+  {
+    "candidates": [
+      {
+        "accepted": false,
+        "covered_shipments_days": 0,
+        "detail": "outside the evidence's effective dates",
+        "end": null,
+        "note_id": "N003",
+        "observed_shipments_days": 0,
+        "score": 0.5780355,
+        "source_fingerprint": "a2bb1afbff822e44af1fa77fdc98cb6c4098e9cb1e68886978b9155bd85d6e5a",
+        "start": null
+      },
+      {
+        "accepted": false,
+        "covered_shipments_days": 0,
+        "detail": "wrong directional route",
+        "end": null,
+        "note_id": "N002",
+        "observed_shipments_days": 0,
+        "score": 0.5079509,
+        "source_fingerprint": "53c2237e55225a0c9e7511c08220005eb5fc225ee62e3a9e90b1693394e0df25",
+        "start": null
+      },
+      {
+        "accepted": false,
+        "covered_shipments_days": 0,
+        "detail": "wrong directional route",
+        "end": null,
+        "note_id": "N001",
+        "observed_shipments_days": 0,
+        "score": 0.4851914,
+        "source_fingerprint": "bf5622c52b090af0d48f2e7a9559a883a43112a170675cecbe06ca9150212e75",
+        "start": null
+      },
+      {
+        "accepted": false,
+        "covered_shipments_days": 0,
+        "detail": "wrong directional route",
+        "end": null,
+        "note_id": "N005",
+        "observed_shipments_days": 0,
+        "score": 0.455651,
+        "source_fingerprint": "fd15d0a00d95a3994500b13765c7c03e46b7d67d92122274f94b02886af16174",
+        "start": null
+      },
+      {
+        "accepted": false,
+        "covered_shipments_days": 0,
+        "detail": "no supported, unambiguous cost-increase assertion; manual review required",
+        "end": null,
+        "note_id": "N006",
+        "observed_shipments_days": 0,
+        "score": 0.433907,
+        "source_fingerprint": "34e05946df2f7d22422601c42e7d1b08717c9ea574eaa10ccc5d28ed0c92618b",
+        "start": null
+      }
+    ],
+    "route": "Mumbai-Pune",
+    "week_of": "2025-12-22"
+  }
+]

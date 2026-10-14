@@ -77,7 +77,14 @@ def main() -> int:
         for root in [Path("src"), Path("tests")]
         for p in sorted(root.rglob("*.py"))
     }
-    report["source_sha256"]["app.py"] = sha256("app.py")
+    for name in [
+        "app.py",
+        "scripts/verify_submission.py",
+        "pyproject.toml",
+        "constraints.txt",
+        "requirements.txt",
+    ]:
+        report["source_sha256"][name] = sha256(name)
     report["reproducibility_identical"] = reproducibility["identical"]
     report["passed"] = True
     write_json(report_path, report)

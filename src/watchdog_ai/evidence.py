@@ -52,17 +52,31 @@ _FUEL = re.compile(
     r"costs across all routes by roughly (?P<low>\d+(?:\.\d+)?)-(?P<high>\d+(?:\.\d+)?)%\.",
     re.I,
 )
-_MONTHS = {
-    name: i
-    for i, name in enumerate(
-        ["jan", "feb", "mar", "apr", "may", "jun", "jul", "aug", "sep", "oct", "nov", "dec"], 1
-    )
-}
+_MONTHS = {}
+for _number, _name in enumerate(
+    [
+        "january",
+        "february",
+        "march",
+        "april",
+        "may",
+        "june",
+        "july",
+        "august",
+        "september",
+        "october",
+        "november",
+        "december",
+    ],
+    1,
+):
+    _MONTHS[_name] = _number
+    _MONTHS[_name[:3]] = _number
 
 
 def _month_day(text: str, year: int) -> date:
     month, day = text.lower().split()
-    return date(year, _MONTHS[month[:3]], int(day))
+    return date(year, _MONTHS[month], int(day))
 
 
 def interpret(note: Note) -> Interpretation | None:

@@ -58,6 +58,33 @@ and 104 Monday-to-Sunday weeks. Source files in `data/` are preserved unchanged.
 The malformed unquoted comma in the sample's last reason is not reproduced.
 Only its header is read as the formatting contract.
 
+## Verified results
+
+The final semantic run produces **19 anomalies: 3 supported and 16 unexplained**.
+All **67 tests pass**, with no failures or skips, including real embedding inference
+and the dashboard. The three official numerical examples match. All 30 evaluation cases pass:
+16/16 detection cases, 7/7 route citation decisions (including 3/3 positive note
+matches), and zero false justifications across 16 negative support cases. These
+are small-case-suite results, not estimates of production accuracy.
+
+Three fresh embedding processes produce byte-identical submission, full analysis,
+evidence audit, usage, and manifest files. Submission SHA-256:
+`7bf97646c160325d87e34eb175b5afc29d4bb2dd85f401cc83b2cfae6bc3ef26`.
+One full run performs two embedding encode calls over 29 texts and 1,152 non-padding
+wordpieces, with zero generative calls/tokens and USD 0 API cost.
+
+The tested 10/15/20/25/30% thresholds produce 79/26/19/13/10 anomalies respectively.
+The 20% default remains an explicit policy choice. See the machine-readable
+[evaluation](reports/evaluation.json), [reproducibility](reports/reproducibility.json),
+and [verification](reports/verification.json) reports for actual execution evidence.
+The verification report records the test count, environment, checks, and source hashes.
+
+To regenerate all verification evidence in one command:
+
+```bash
+python scripts/verify_submission.py
+```
+
 ## Architecture
 
 ```mermaid

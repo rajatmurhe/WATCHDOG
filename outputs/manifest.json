@@ -1,0 +1,27 @@
+{
+  "anomalies": 19,
+  "input_sha256": {
+    "notes": "875c57a896ac3dfac0f712f8865b287bb5d2bd5423d26e798297b74dce87e6dc",
+    "shipments": "1a2b4d66c4dc694111ba37b966486b5b0650df9ec8687402f3434117b140f4b6"
+  },
+  "justified": 3,
+  "output_policy": "Anomalies only in submission; all route-weeks in full_analysis.csv",
+  "packages": {
+    "huggingface-hub": "1.31.0",
+    "numpy": "2.3.2",
+    "pandas": "2.3.1",
+    "sentence-transformers": "6.0.1",
+    "torch": "2.13.0",
+    "transformers": "5.17.0",
+    "watchdog-freight": "1.0.0"
+  },
+  "route_weeks": 728,
+  "routes": 7,
+  "shipments": 2940,
+  "thresholds": {
+    "history_pct": 20.0,
+    "peer_pct": 20.0
+  },
+  "top_k": 5,
+  "unexplained": 16
+}

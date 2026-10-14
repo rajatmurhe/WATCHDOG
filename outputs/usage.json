@@ -1,0 +1,26 @@
+{
+  "embedded_texts": 29,
+  "embedding_encode_calls": 2,
+  "embedding_input_tokens": 1152,
+  "embedding_token_definition": "non-padding wordpieces including special tokens, after truncation",
+  "estimated_api_cost_usd": 0.0,
+  "fallback_reason": null,
+  "generative_model": null,
+  "inference": {
+    "deterministic_algorithms": true,
+    "device": "cpu",
+    "max_seq_length": 256,
+    "normalized_embeddings": true,
+    "seed": 0,
+    "threads": 1
+  },
+  "input_tokens": 0,
+  "llm_calls": 0,
+  "model_revision": "1110a243fdf4706b3f48f1d95db1a4f5529b4d41",
+  "output_tokens": 0,
+  "pricing_assumption": "Local embedding inference; no paid API or generative model. Hardware/electricity excluded.",
+  "retrieval_method": "embedding",
+  "retrieval_model": "sentence-transformers/all-MiniLM-L6-v2",
+  "retrieval_queries": 19,
+  "scope": "Application runtime only; coding-assistant usage is not included or measured."
+}

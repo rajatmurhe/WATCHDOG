@@ -1,0 +1,487 @@
+{
+  "cases_sha256": "c12f4fe33553de657b3314d35b5ee86767f2d44a96de45bb98128a692c47126a",
+  "details": [
+    {
+      "case_id": "sample_history",
+      "expected": {
+        "anomaly": true,
+        "note": ""
+      },
+      "kind": "route",
+      "passed": true,
+      "predicted": {
+        "anomaly": true,
+        "note": ""
+      },
+      "rationale": "Official sample: clear unexplained historical and peer increase"
+    },
+    {
+      "case_id": "sample_festival",
+      "expected": {
+        "anomaly": true,
+        "note": "N002"
+      },
+      "kind": "route",
+      "passed": true,
+      "predicted": {
+        "anomaly": true,
+        "note": "N002"
+      },
+      "rationale": "Official sample: festival surcharge applies to route and week"
+    },
+    {
+      "case_id": "sample_peer",
+      "expected": {
+        "anomaly": true,
+        "note": ""
+      },
+      "kind": "route",
+      "passed": true,
+      "predicted": {
+        "anomaly": true,
+        "note": ""
+      },
+      "rationale": "Official sample: peer anomaly with no cost-impact evidence"
+    },
+    {
+      "case_id": "flood_week_one",
+      "expected": {
+        "anomaly": true,
+        "note": "N001"
+      },
+      "kind": "route",
+      "passed": true,
+      "predicted": {
+        "anomaly": true,
+        "note": "N001"
+      },
+      "rationale": "Flood starts this week and explicitly increases trip costs"
+    },
+    {
+      "case_id": "flood_week_two",
+      "expected": {
+        "anomaly": true,
+        "note": "N001"
+      },
+      "kind": "route",
+      "passed": true,
+      "predicted": {
+        "anomaly": true,
+        "note": "N001"
+      },
+      "rationale": "Flood window extends through March 8"
+    },
+    {
+      "case_id": "flood_expired",
+      "expected": {
+        "anomaly": true,
+        "note": ""
+      },
+      "kind": "route",
+      "passed": true,
+      "predicted": {
+        "anomaly": true,
+        "note": ""
+      },
+      "rationale": "Costs remain high after the stated end of disruption"
+    },
+    {
+      "case_id": "recovery_is_not_cost",
+      "expected": {
+        "anomaly": true,
+        "note": ""
+      },
+      "kind": "route",
+      "passed": true,
+      "predicted": {
+        "anomaly": true,
+        "note": ""
+      },
+      "rationale": "Recovery note is not evidence of increased costs"
+    },
+    {
+      "case_id": "normal_flat",
+      "expected": {
+        "anomaly": false
+      },
+      "kind": "synthetic",
+      "passed": true,
+      "predicted": {
+        "anomaly": false
+      },
+      "rationale": "No rise and no unusual comparison"
+    },
+    {
+      "case_id": "normal_decrease",
+      "expected": {
+        "anomaly": false
+      },
+      "kind": "synthetic",
+      "passed": true,
+      "predicted": {
+        "anomaly": false
+      },
+      "rationale": "Peer premium alone cannot turn a historical decrease into a rise"
+    },
+    {
+      "case_id": "clear_history",
+      "expected": {
+        "anomaly": true
+      },
+      "kind": "synthetic",
+      "passed": true,
+      "predicted": {
+        "anomaly": true
+      },
+      "rationale": "One-third historical increase is materially unusual"
+    },
+    {
+      "case_id": "clear_peer",
+      "expected": {
+        "anomaly": true
+      },
+      "kind": "synthetic",
+      "passed": true,
+      "predicted": {
+        "anomaly": true
+      },
+      "rationale": "Positive historical trend with a one-third peer premium"
+    },
+    {
+      "case_id": "below_boundary",
+      "expected": {
+        "anomaly": false
+      },
+      "kind": "synthetic",
+      "passed": true,
+      "predicted": {
+        "anomaly": false
+      },
+      "rationale": "19.9 percent is below the declared 20 percent policy"
+    },
+    {
+      "case_id": "on_boundary",
+      "expected": {
+        "anomaly": true
+      },
+      "kind": "synthetic",
+      "passed": true,
+      "predicted": {
+        "anomaly": true
+      },
+      "rationale": "Exactly 20 percent meets the inclusive declared policy"
+    },
+    {
+      "case_id": "above_boundary",
+      "expected": {
+        "anomaly": true
+      },
+      "kind": "synthetic",
+      "passed": true,
+      "predicted": {
+        "anomaly": true
+      },
+      "rationale": "20.1 percent exceeds the declared policy"
+    },
+    {
+      "case_id": "no_history_high_peer",
+      "expected": {
+        "anomaly": true
+      },
+      "kind": "synthetic",
+      "passed": true,
+      "predicted": {
+        "anomaly": true
+      },
+      "rationale": "A large peer deviation is visible despite unavailable trend"
+    },
+    {
+      "case_id": "no_comparisons",
+      "expected": {
+        "anomaly": false
+      },
+      "kind": "synthetic",
+      "passed": true,
+      "predicted": {
+        "anomaly": false
+      },
+      "rationale": "No comparison exists to establish unusualness"
+    },
+    {
+      "case_id": "valid_festival",
+      "expected": {
+        "support": true
+      },
+      "kind": "evidence",
+      "passed": true,
+      "predicted": {
+        "support": true
+      },
+      "rationale": "An actual applicable surcharge"
+    },
+    {
+      "case_id": "wrong_festival_route",
+      "expected": {
+        "support": false
+      },
+      "kind": "evidence",
+      "passed": true,
+      "predicted": {
+        "support": false
+      },
+      "rationale": "Correct week but unrelated route"
+    },
+    {
+      "case_id": "wrong_direction",
+      "expected": {
+        "support": false
+      },
+      "kind": "evidence",
+      "passed": true,
+      "predicted": {
+        "support": false
+      },
+      "rationale": "Reverse direction is a different route"
+    },
+    {
+      "case_id": "wrong_festival_week",
+      "expected": {
+        "support": false
+      },
+      "kind": "evidence",
+      "passed": true,
+      "predicted": {
+        "support": false
+      },
+      "rationale": "Temporary surcharge week ended"
+    },
+    {
+      "case_id": "flood_expiry",
+      "expected": {
+        "support": false
+      },
+      "kind": "evidence",
+      "passed": true,
+      "predicted": {
+        "support": false
+      },
+      "rationale": "Flood ended March 8"
+    },
+    {
+      "case_id": "fuel_start",
+      "expected": {
+        "support": true
+      },
+      "kind": "evidence",
+      "passed": true,
+      "predicted": {
+        "support": true
+      },
+      "rationale": "Contemporaneous nationwide cost impact"
+    },
+    {
+      "case_id": "fuel_later",
+      "expected": {
+        "support": false
+      },
+      "kind": "evidence",
+      "passed": true,
+      "predicted": {
+        "support": false
+      },
+      "rationale": "No indefinite justification from a start-only fuel note"
+    },
+    {
+      "case_id": "excluded_toll",
+      "expected": {
+        "support": false
+      },
+      "kind": "evidence",
+      "passed": true,
+      "predicted": {
+        "support": false
+      },
+      "rationale": "Explicitly excludes dataset routes"
+    },
+    {
+      "case_id": "maintenance_no_cost",
+      "expected": {
+        "support": false
+      },
+      "kind": "evidence",
+      "passed": true,
+      "predicted": {
+        "support": false
+      },
+      "rationale": "No significant cost impact"
+    },
+    {
+      "case_id": "stable_demand",
+      "expected": {
+        "support": false
+      },
+      "kind": "evidence",
+      "passed": true,
+      "predicted": {
+        "support": false
+      },
+      "rationale": "Stable demand supplies no cost-increase assertion"
+    },
+    {
+      "case_id": "better_roads",
+      "expected": {
+        "support": false
+      },
+      "kind": "evidence",
+      "passed": true,
+      "predicted": {
+        "support": false
+      },
+      "rationale": "Improvement is not increased cost evidence"
+    },
+    {
+      "case_id": "normal_movement",
+      "expected": {
+        "support": false
+      },
+      "kind": "evidence",
+      "passed": true,
+      "predicted": {
+        "support": false
+      },
+      "rationale": "Normal movement supplies no cost-increase assertion"
+    },
+    {
+      "case_id": "recovery",
+      "expected": {
+        "support": false
+      },
+      "kind": "evidence",
+      "passed": true,
+      "predicted": {
+        "support": false
+      },
+      "rationale": "Recovery does not justify new cost increases"
+    },
+    {
+      "case_id": "tracking_no_rates",
+      "expected": {
+        "support": false
+      },
+      "kind": "evidence",
+      "passed": true,
+      "predicted": {
+        "support": false
+      },
+      "rationale": "Transporter rates did not change"
+    }
+  ],
+  "limitations": [
+    "Small, purposive, AI-authored labels; not a random held-out production benchmark.",
+    "Boundary cases test the declared 20% policy; they do not prove that policy is optimal.",
+    "Route cases include the three official examples and event-window checks; labels were not copied from predictions.",
+    "Narrative grammar is intentionally narrow; unfamiliar true explanations can be rejected.",
+    "No ground truth exists for every route-week, so population precision/recall is not claimed."
+  ],
+  "pipeline_manifest": {
+    "anomalies": 19,
+    "input_sha256": {
+      "notes": "875c57a896ac3dfac0f712f8865b287bb5d2bd5423d26e798297b74dce87e6dc",
+      "shipments": "1a2b4d66c4dc694111ba37b966486b5b0650df9ec8687402f3434117b140f4b6"
+    },
+    "justified": 3,
+    "output_policy": "Anomalies only in submission; all route-weeks in full_analysis.csv",
+    "packages": {
+      "huggingface-hub": "1.31.0",
+      "numpy": "2.3.2",
+      "pandas": "2.3.1",
+      "sentence-transformers": "6.0.1",
+      "torch": "2.13.0",
+      "transformers": "5.17.0",
+      "watchdog-freight": "1.0.0"
+    },
+    "route_weeks": 728,
+    "routes": 7,
+    "shipments": 2940,
+    "thresholds": {
+      "history_pct": 20.0,
+      "peer_pct": 20.0
+    },
+    "top_k": 5,
+    "unexplained": 16
+  },
+  "retrieval_usage": {
+    "embedded_texts": 29,
+    "embedding_encode_calls": 2,
+    "embedding_input_tokens": 1152,
+    "embedding_token_definition": "non-padding wordpieces including special tokens, after truncation",
+    "estimated_api_cost_usd": 0.0,
+    "fallback_reason": null,
+    "generative_model": null,
+    "inference": {
+      "deterministic_algorithms": true,
+      "device": "cpu",
+      "max_seq_length": 256,
+      "normalized_embeddings": true,
+      "seed": 0,
+      "threads": 1
+    },
+    "input_tokens": 0,
+    "llm_calls": 0,
+    "model_revision": "1110a243fdf4706b3f48f1d95db1a4f5529b4d41",
+    "output_tokens": 0,
+    "pricing_assumption": "Local embedding inference; no paid API or generative model. Hardware/electricity excluded.",
+    "retrieval_method": "embedding",
+    "retrieval_model": "sentence-transformers/all-MiniLM-L6-v2",
+    "retrieval_queries": 19,
+    "scope": "Application runtime only; coding-assistant usage is not included or measured."
+  },
+  "summary": {
+    "all_cases_passed": true,
+    "cases": 30,
+    "false_justification_rate": 0.0,
+    "flagging_correct": 16,
+    "flagging_total": 16,
+    "justification_false_positives": 0,
+    "justification_precision": 1.0,
+    "justification_true_positives": 5,
+    "negative_evidence_cases": 16,
+    "passed": 30,
+    "positive_note_correct": 3,
+    "positive_note_total": 3,
+    "supporting_note_correct": 7,
+    "supporting_note_total": 7
+  },
+  "threshold_sensitivity": [
+    {
+      "anomalies": 79,
+      "policy_case_correct": 8,
+      "policy_case_total": 9,
+      "threshold_pct": 10
+    },
+    {
+      "anomalies": 26,
+      "policy_case_correct": 8,
+      "policy_case_total": 9,
+      "threshold_pct": 15
+    },
+    {
+      "anomalies": 19,
+      "policy_case_correct": 9,
+      "policy_case_total": 9,
+      "threshold_pct": 20
+    },
+    {
+      "anomalies": 13,
+      "policy_case_correct": 7,
+      "policy_case_total": 9,
+      "threshold_pct": 25
+    },
+    {
+      "anomalies": 10,
+      "policy_case_correct": 7,
+      "policy_case_total": 9,
+      "threshold_pct": 30
+    }
+  ]
+}

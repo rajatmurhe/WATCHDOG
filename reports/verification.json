@@ -1,0 +1,84 @@
+{
+  "commands": [
+    {
+      "check": "dependency consistency",
+      "returncode": 0
+    },
+    {
+      "check": "complete test suite including real embeddings",
+      "returncode": 0
+    },
+    {
+      "check": "full embedding pipeline",
+      "returncode": 0
+    },
+    {
+      "check": "labeled evaluation",
+      "returncode": 0
+    },
+    {
+      "check": "three untouched executions",
+      "returncode": 0
+    }
+  ],
+  "evaluation": {
+    "all_cases_passed": true,
+    "cases": 30,
+    "false_justification_rate": 0.0,
+    "flagging_correct": 16,
+    "flagging_total": 16,
+    "justification_false_positives": 0,
+    "justification_precision": 1.0,
+    "justification_true_positives": 5,
+    "negative_evidence_cases": 16,
+    "passed": 30,
+    "positive_note_correct": 3,
+    "positive_note_total": 3,
+    "supporting_note_correct": 7,
+    "supporting_note_total": 7
+  },
+  "isolated_environment": true,
+  "output_sha256": {
+    "evidence_audit.json": "aff83c608bafb0b3095e8a26c1f491d92ef5125549791cebd492c7c9d19fc45d",
+    "full_analysis.csv": "1de4f56754f20295c92d23439400fca10308ecf0c186038106e7f47b78d3b641",
+    "manifest.json": "859649dafbef0a0408d00cd63f71b9de829f802313b764c4656c3d0b187dfc91",
+    "submission.csv": "7bf97646c160325d87e34eb175b5afc29d4bb2dd85f401cc83b2cfae6bc3ef26",
+    "usage.json": "92f468ed954468cba16d1f11c37dbf3f4f5e2fe2d498cb0e52e4e7993d702358"
+  },
+  "passed": true,
+  "platform": "macOS-14.6.1-arm64-arm-64bit",
+  "python": "3.11.4",
+  "reproducibility_identical": true,
+  "source_sha256": {
+    "app.py": "d5fb5d8fcc183b517bf70adf0db038be25ffbd7e720db10064ab9b90b7c6eddf",
+    "constraints.txt": "16fc35f3e6b3ba0b374205ebe86d9306d033a1d9933a8ceef39def1fb1731f1b",
+    "pyproject.toml": "d1022f1e24ac7c920a48e30d7773870df7b7639c367c0b6b42503f3b6066527b",
+    "requirements.txt": "0c8107155b64fbefa6f3b6083952f633f1a29e1cef0492311dd11ef76107cad0",
+    "scripts/verify_submission.py": "a40a7baf99f4c10e0999178649163296c4478679d3b9a7e9d2217df1f8d991f4",
+    "src/watchdog_ai/__init__.py": "e1402979ab1f150cb5448dd94c6eda43d6d9b870fb75a61292d2d4c45b05df35",
+    "src/watchdog_ai/__main__.py": "e0bb04d80811ecb8f9e04dff8d222d3bc0d7f5c1172345c1df1b7de8fa58cd9f",
+    "src/watchdog_ai/calculations.py": "7ab26d0cb6e585ab8a5a7c3b158a9078713419def704d4ea2f8d7f3ba4c60dd2",
+    "src/watchdog_ai/cli.py": "1ce09ab5459d6ffecbb51b2f20cdbccaa8ba716e525ff44c845e3081b44bd0c2",
+    "src/watchdog_ai/data.py": "1367e5637320b9e39a80ac279fab78b81a004262b364f8915cf7b3ffcee48e64",
+    "src/watchdog_ai/evaluation.py": "b698e02f93ffee6ae86a65f8206aafb202a09704a295c015990b468c74fad219",
+    "src/watchdog_ai/evidence.py": "361312d45337a8636cc052426c8753cc61fdc66e058ebac30626ec5bf5a4c115",
+    "src/watchdog_ai/pipeline.py": "5d13978db7670cf43125e9e5cfdac36e71f345d1bd14c4d8f6817a6dc6418cd0",
+    "src/watchdog_ai/reproducibility.py": "b9e5a1279a211490fc6ffa6c83e9eced756e18b76d408831fe26e54c142d7b77",
+    "src/watchdog_ai/retrieval.py": "79145c9c1e9a4a10e6bfa6cb1965eb7a4e33d1a30de1f3cec5019f1727883989",
+    "tests/conftest.py": "58422e083fd6c49aa8bb92b7d8ca66570ef085e401045923d9f13ac2dfe86a5d",
+    "tests/test_calculations.py": "8fad9d6b51141d552faaa319252fa3dabfd34c259116d2668ee682702eac7511",
+    "tests/test_dashboard.py": "e38e1c1dd8f7d993346b86369d874af823382dd55646f2c7aad2e6df41510413",
+    "tests/test_data.py": "14d4d516a6067917db00d4e3bd828500789b596172ffa2ca10a47b24cc4d41f7",
+    "tests/test_evaluation.py": "5a6101f1ffe8ee982c7b1b8660bb1115db886ea28354d1a50fee22f76ed0f38e",
+    "tests/test_evidence.py": "fede440970ddf9393d60d5423ca51729942845e97680d05ef69c46d9401fb2ae",
+    "tests/test_failures.py": "3b7e5754c1a24fa9b5e942fd3218061f63cea35720d7089f0faabc3c40c78058",
+    "tests/test_pipeline.py": "348f2c86cc0f6264a2b207241961470847040101bb90409676c5461e6fb8d07f"
+  },
+  "submission_sha256": "7bf97646c160325d87e34eb175b5afc29d4bb2dd85f401cc83b2cfae6bc3ef26",
+  "tests": {
+    "errors": 0,
+    "failures": 0,
+    "skipped": 0,
+    "total": 67
+  }
+}

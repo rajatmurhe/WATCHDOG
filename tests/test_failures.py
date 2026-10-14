@@ -82,3 +82,8 @@ def test_explicit_flood_window_cannot_be_replaced_by_note_date(notes):
     assert not verify(
         note, {note.note_id: note}, "Chennai-Bangalore", note.date, (note.date,)
     ).accepted
+
+
+def test_unknown_month_word_is_not_treated_as_a_date(notes):
+    note = replace(notes[0], text=notes[0].text.replace("Mar 8", "Marching 8"))
+    assert not verify(note, {note.note_id: note}, note.applies_to, note.date, (note.date,)).accepted
