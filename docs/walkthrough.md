@@ -120,6 +120,7 @@ could propose structured evidence for review, but should not bypass validation.
 | `evaluation/labeled_cases.csv` | Explicit expected outcomes and rationales, not generated from predictions |
 | `data/` | Original three supplied CSVs |
 | `app.py` | Read-only Streamlit view of pipeline outputs and verification reports |
+| `assets/dashboard.css` / `.streamlit/config.toml` | Responsive workspace styling and Streamlit theme |
 | `outputs/` | Submission plus full analysis, audit, usage and input/configuration manifest |
 | `reports/` | Actual executed evaluation/reproducibility/verification results |
 | `pyproject.toml` / `requirements.txt` | Installable package, pinned dependencies, optional groups and test configuration |

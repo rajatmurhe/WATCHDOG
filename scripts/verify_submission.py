@@ -79,6 +79,8 @@ def main() -> int:
     }
     for name in [
         "app.py",
+        "assets/dashboard.css",
+        ".streamlit/config.toml",
         "scripts/verify_submission.py",
         "pyproject.toml",
         "constraints.txt",

@@ -34,9 +34,12 @@ caches, model weights, and temporary experiments are excluded by `.gitignore`.
 Inspect `reports/verification.json` for the executed results, not a hand-written
 claim of a test pass.
 
-The optional dashboard was additionally exercised in Chrome: route chart and
-evidence table rendered with no application exceptions. Its AppTest checks cover
-missing outputs, metrics, route changes, and an expired flooding example.
+The dashboard was additionally exercised in Chrome on desktop and mobile. All four
+pages rendered without application exceptions; navigation and the CSV download
+were checked, with downloaded bytes matching the saved submission. Mobile layout
+had no horizontal page overflow. AppTest checks cover missing outputs, metrics,
+route/year/status filters, navigation to evidence, supported and unsupported notes,
+empty findings, and verification reports that belong to different outputs.
 
 ## Review before the interview
 

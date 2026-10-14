@@ -63,7 +63,7 @@ Only its header is read as the formatting contract.
 ## Verified results
 
 The final semantic run produces **19 anomalies: 3 supported and 16 unexplained**.
-All **67 tests pass**, with no failures or skips, including real embedding inference
+All **70 tests pass**, with no failures or skips, including real embedding inference
 and the dashboard. The three official numerical examples match. All 30 evaluation cases pass:
 16/16 detection cases, 7/7 route citation decisions (including 3/3 positive note
 matches), and zero false justifications across 16 negative support cases. These
@@ -259,9 +259,18 @@ claimed to be zero.
 ## Review and walkthrough
 
 The optional dashboard reads the saved outputs and uses no separate calculation
-engine. Run `streamlit run app.py` after generating the analysis. It shows route
-rates/baselines, ranked evidence and rejection reasons, model usage, and verification
-reports. It warns when saved checks no longer match the selected output artifacts.
+engine. Run `streamlit run app.py` after generating the analysis. Four workspace
+pages organize the review:
+
+- **Overview:** shipment coverage, unusual weeks, routes needing attention, and recent findings.
+- **Route explorer:** route/year/status filters, cost trends, weekly detail, and a direct link to evidence.
+- **Evidence center:** verdict, observed comparisons, original notes, and acceptance/rejection reasons.
+- **System health:** evaluation, repeatability, source-matched test reports, and actual model usage.
+
+The dashboard uses a responsive teal-and-neutral theme, distinct status colors,
+and an export button that downloads the exact submission CSV. Settings hold the
+input artifact directory. Reports are marked stale when outputs or checked source
+files change. Layout and colors live in `assets/dashboard.css` and `.streamlit/config.toml`.
 
 - [Requirements and decisions](docs/requirements.md)
 - [Ten-minute walkthrough and interview preparation](docs/walkthrough.md)

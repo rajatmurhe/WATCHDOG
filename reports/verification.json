@@ -50,11 +50,13 @@
   "python": "3.11.4",
   "reproducibility_identical": true,
   "source_sha256": {
-    "app.py": "d5fb5d8fcc183b517bf70adf0db038be25ffbd7e720db10064ab9b90b7c6eddf",
+    ".streamlit/config.toml": "658d3c9f4dd6a2aea19a27bc9c763a12d7a7d7a0a08b4f0578a2e4f1efa6294d",
+    "app.py": "09c1362f03e2fd6cb55562f3e2234b165a391cf6677feb01a2d87772de7d4873",
+    "assets/dashboard.css": "5989e9214da04e9cac67c3e07c66a0432b26bf618a7096498589cf73e48003b7",
     "constraints.txt": "16fc35f3e6b3ba0b374205ebe86d9306d033a1d9933a8ceef39def1fb1731f1b",
     "pyproject.toml": "d1022f1e24ac7c920a48e30d7773870df7b7639c367c0b6b42503f3b6066527b",
     "requirements.txt": "0c8107155b64fbefa6f3b6083952f633f1a29e1cef0492311dd11ef76107cad0",
-    "scripts/verify_submission.py": "a40a7baf99f4c10e0999178649163296c4478679d3b9a7e9d2217df1f8d991f4",
+    "scripts/verify_submission.py": "5e85aa201d6d0f0e9cad342d1888bbce013cca1cfeb086b6778307387bfcfedc",
     "src/watchdog_ai/__init__.py": "e1402979ab1f150cb5448dd94c6eda43d6d9b870fb75a61292d2d4c45b05df35",
     "src/watchdog_ai/__main__.py": "e0bb04d80811ecb8f9e04dff8d222d3bc0d7f5c1172345c1df1b7de8fa58cd9f",
     "src/watchdog_ai/calculations.py": "7ab26d0cb6e585ab8a5a7c3b158a9078713419def704d4ea2f8d7f3ba4c60dd2",
@@ -67,7 +69,7 @@
     "src/watchdog_ai/retrieval.py": "79145c9c1e9a4a10e6bfa6cb1965eb7a4e33d1a30de1f3cec5019f1727883989",
     "tests/conftest.py": "58422e083fd6c49aa8bb92b7d8ca66570ef085e401045923d9f13ac2dfe86a5d",
     "tests/test_calculations.py": "8fad9d6b51141d552faaa319252fa3dabfd34c259116d2668ee682702eac7511",
-    "tests/test_dashboard.py": "e38e1c1dd8f7d993346b86369d874af823382dd55646f2c7aad2e6df41510413",
+    "tests/test_dashboard.py": "246a546b0788ea41046443a299cf2379451a2eb1d315ddae17416363c6b0a219",
     "tests/test_data.py": "14d4d516a6067917db00d4e3bd828500789b596172ffa2ca10a47b24cc4d41f7",
     "tests/test_evaluation.py": "5a6101f1ffe8ee982c7b1b8660bb1115db886ea28354d1a50fee22f76ed0f38e",
     "tests/test_evidence.py": "fede440970ddf9393d60d5423ca51729942845e97680d05ef69c46d9401fb2ae",
@@ -79,6 +81,6 @@
     "errors": 0,
     "failures": 0,
     "skipped": 0,
-    "total": 67
+    "total": 70
   }
 }
