@@ -41,9 +41,7 @@ def navigate(page, route=None, case=None):
 
 
 def format_change(value):
-    if pd.notna(value):
-        return f"{float(value):+.1f}%"
-    return "Unavailable"
+    return f"{float(value):+.1f}%" if pd.notna(value) else "Unavailable"
 
 
 def cost_chart(frame, height=330):
