@@ -22,6 +22,8 @@ python -m watchdog_ai reproducibility --runs 3
 The first semantic run downloads the pinned open-source embedding model from
 Hugging Face. Model weights stay in the user's Hugging Face cache, outside Git.
 No API key or paid generative service is needed. Subsequent runs can use the cache.
+After the initial model download, use `HF_HUB_OFFLINE=1 python -m watchdog_ai run`
+to avoid network metadata checks and run entirely from the local model cache.
 
 For a lightweight offline installation, use `python -m pip install -e '.[test]'`
 and add `--retrieval lexical` to pipeline/evaluation/reproducibility commands.
@@ -78,6 +80,8 @@ The 20% default remains an explicit policy choice. See the machine-readable
 [evaluation](reports/evaluation.json), [reproducibility](reports/reproducibility.json),
 and [verification](reports/verification.json) reports for actual execution evidence.
 The verification report records the test count, environment, checks, and source hashes.
+A [second clean installation](reports/clean_install.json), using pinned wheel artifacts
+and the cached model in offline mode, reproduced all five output files exactly.
 
 To regenerate all verification evidence in one command:
 

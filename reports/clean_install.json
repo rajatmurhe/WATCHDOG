@@ -1,0 +1,20 @@
+{
+  "dependency_source": "Pinned wheel artifacts supplied from local pip cache; fresh isolated venv without system site-packages",
+  "installation": "pip install --no-index --find-links <wheel-cache> -r requirements.txt",
+  "isolated_environment": true,
+  "model_source": "Verified pinned Hugging Face model cache; HF_HUB_OFFLINE=1",
+  "network_note": "Initial online clean-env run was interrupted while waiting on Hugging Face metadata; cached offline run completed.",
+  "output_matches": {
+    "evidence_audit.json": true,
+    "full_analysis.csv": true,
+    "manifest.json": true,
+    "submission.csv": true,
+    "usage.json": true
+  },
+  "passed": true,
+  "pip_check_passed": true,
+  "python": "3.11.4",
+  "retrieval": "embedding",
+  "submission_sha256": "7bf97646c160325d87e34eb175b5afc29d4bb2dd85f401cc83b2cfae6bc3ef26",
+  "system_site_packages": false
+}

@@ -15,6 +15,8 @@ Repository: https://github.com/rajatmurhe/WATCHDOG
 - [x] Actual model usage: 29 embedded texts, 1,152 wordpieces, two encode calls;
   zero generative calls, zero generative input/output tokens, USD 0 API cost.
 - [x] Pinned dependencies and model revision; explicit lexical fallback.
+- [x] Second clean virtual environment installed from pinned wheels; real cached
+  embedding run matches all five submitted output files (see `reports/clean_install.json`).
 - [x] README with exact commands, formulas, assumptions, and limitations.
 - [x] Ten-minute walkthrough, file guide, and grounded interview questions/answers.
 - [x] Streamlit dashboard using pipeline artifacts; route/evidence behavior tested.
