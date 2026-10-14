@@ -63,7 +63,7 @@ Only its header is read as the formatting contract.
 ## Verified results
 
 The final semantic run produces **19 anomalies: 3 supported and 16 unexplained**.
-All **70 tests pass**, with no failures or skips, including real embedding inference
+All **88 tests pass**, with no failures or skips, including real embedding inference
 and the dashboard. The three official numerical examples match. All 30 evaluation cases pass:
 16/16 detection cases, 7/7 route citation decisions (including 3/3 positive note
 matches), and zero false justifications across 16 negative support cases. These
@@ -259,12 +259,13 @@ claimed to be zero.
 ## Review and walkthrough
 
 The optional dashboard reads the saved outputs and uses no separate calculation
-engine. Run `streamlit run app.py` after generating the analysis. Four workspace
+engine. Run `streamlit run app.py` after generating the analysis. Five workspace
 pages organize the review:
 
 - **Overview:** shipment coverage, unusual weeks, routes needing attention, and recent findings.
 - **Route explorer:** route/year/status filters, cost trends, weekly detail, and a direct link to evidence.
 - **Evidence center:** verdict, observed comparisons, original notes, and acceptance/rejection reasons.
+- **Ask WATCHDOG:** scoped natural-language lookup of saved findings, explanations, and note citations.
 - **System health:** evaluation, repeatability, source-matched test reports, and actual model usage.
 
 The dashboard uses a responsive teal-and-neutral theme, distinct status colors,
@@ -281,3 +282,17 @@ This implementation was developed with OpenAI Codex assistance at the user's req
 The commit history records actual completed work, without fabricated timelines or
 claims of independent human authorship. The candidate should review the code and
 be able to reproduce and explain its assumptions before submission.
+
+## Questions about findings
+
+`src/watchdog_ai/questions.py` implements a deterministic, rule-based question interface over `full_analysis.csv`. It resolves explicit directional routes, month names, and years. Route/year selectors supply omitted context; explicit mentions override them. Missing or ambiguous scope prompts clarification. Month selection follows `week_of` (the Monday), not individual shipment dates.
+
+The interface returns counts and matching saved rows. It reproduces the pipeline's explanations and cited note IDs without generating new causal claims. Supported and unexplained filters operate on existing verdicts. A period with no unusual findings is reported as such even when the question presupposes an increase. Questions cannot change the underlying verdicts or outputs. Answers are invalidated if the selected full-analysis artifact changes.
+
+Examples:
+
+- Why did Chennai to Bangalore get pricier in March 2025?
+- Show unexplained findings for Mumbai to Pune in 2025.
+- What notes justified Ahmedabad to Mumbai in January 2025?
+
+This is a limited natural-language interface, not an LLM or general language understanding. It supports one directional route, one year, and optionally one named month per question. Exact dates, relative periods, cross-route comparisons, arbitrary aggregates, and forecasts are not supported. It makes zero additional embedding or generative calls; question processing has no API charges. Tests cover actual saved explanations, missing scope, reversed/unknown routes, empty periods, explicit overrides, negated support, and evidence navigation.

@@ -183,3 +183,9 @@ small suite is evidence of tested behaviors, not a production accuracy estimate.
 **Why three processes?** Repeating a function could conceal retained state. Fresh
 processes reload inputs and model, execute all logic, and serialize the artifacts
 independently. Hashes compare full precision and wording, not just flags.
+
+## Optional question-answering demonstration
+
+Open **Ask WATCHDOG** and enter “Why did Chennai to Bangalore get pricier in March 2025?” Expand the March 3 finding to show note N001, then inspect the unexplained later weeks. Use **Inspect evidence** to review the source and effective dates. Ask a question without a route/year to show clarification instead of a guessed answer.
+
+Explain that this stretch feature is rule-based lookup over saved results, not generative chat. It adds no API calls and cannot invent a new justification. Month selection uses the route-week Monday. Unsupported comparisons and forecasts require other analysis tools.

@@ -72,3 +72,12 @@ Strict ingestion → weighted weekly rates → calendar/peer baselines → confi
 deterministic detection → local semantic ranking → deterministic evidence checks →
 grounded explanations → exact CSV and audit. The dashboard reads the same artifacts.
 There is no paid generative model, external database, or duplicated frontend math.
+
+## Optional stretch feature
+
+- [x] Ask WATCHDOG: scoped plain-English questions over saved findings.
+- [x] Exact saved explanations and note IDs with navigation to evidence.
+- [x] Clarification for missing scope; no invented causes for normal or missing periods.
+- [x] Desktop and mobile question form checks.
+
+Question answering is deterministic and makes no additional model/API calls. It supports one route, one year, and an optional named month; it is not open-ended conversational inference.

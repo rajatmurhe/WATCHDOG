@@ -5,7 +5,7 @@
 [![Pandas](https://img.shields.io/badge/Pandas-Analytics-150458?style=for-the-badge&logo=pandas&logoColor=white)](src/watchdog_ai/calculations.py)
 [![MiniLM](https://img.shields.io/badge/MiniLM-Local_Embeddings-FFD21E?style=for-the-badge&logo=huggingface&logoColor=black)](src/watchdog_ai/retrieval.py)
 [![Plotly](https://img.shields.io/badge/Plotly-Interactive_Charts-3F4F75?style=for-the-badge&logo=plotly&logoColor=white)](app.py)
-[![Tests](https://img.shields.io/badge/Verified_Tests-70_Passed-177568?style=for-the-badge&logo=pytest&logoColor=white)](reports/verification.json)
+[![Tests](https://img.shields.io/badge/Verified_Tests-88_Passed-177568?style=for-the-badge&logo=pytest&logoColor=white)](reports/verification.json)
 
 WATCHDOG is an explainable freight cost monitoring application built for Freight Tiger’s Software Engineering Intern (AI) case study. It analyzes shipment costs week by week, detects unusual increases, and retrieves operational notes to check whether those increases have supporting evidence.
 
@@ -36,6 +36,14 @@ Filter by route, year, and finding status. Compare observed costs with historica
 Review each verdict alongside original notes, effective dates, source checks, and acceptance or rejection reasons. Retrieval similarity is displayed separately from the evidence decision.
 
 ![WATCHDOG evidence center](docs/images/evidence.png)
+
+### Ask WATCHDOG
+
+Ask questions in plain English about the saved findings, such as **“Why did Chennai to Bangalore get pricier in March 2025?”** Answers show the matching route-weeks, recorded costs, explanations, and note IDs, with direct links to inspect the evidence.
+
+![WATCHDOG question answering](docs/images/questions.png)
+
+Route and year selectors provide context when omitted from a question. This deterministic question interface supports route/month/year lookup and supported or unexplained findings; it does not generate new explanations, calculate arbitrary aggregates, predict costs, or provide open-ended chat. It asks for clarification when required context is missing. No additional model or API calls are made.
 
 ### System Health
 
@@ -76,6 +84,7 @@ The CLI and dashboard share the same saved analysis. The ten-note collection use
 | Local semantic retrieval | Uses 384-dimensional MiniLM embeddings to rank relevant context notes. |
 | Evidence verification | Checks source fingerprints, route applicability, effective dates, and supported cost impact. |
 | Traceable explanations | Includes exact note IDs for supported verdicts and marks missing support as unexplained. |
+| Questions about findings | Plain-English lookup with explicit route/date scope, exact saved explanations, and evidence links. |
 | Review workspace | Provides interactive charts, route filters, evidence inspection, and exact CSV export. |
 | Repeatability | Compares five output artifacts across three fresh process executions. |
 
@@ -132,7 +141,7 @@ These results describe the supplied case-study dataset and saved verification re
 | Input coverage | 2,940 shipments, 7 routes, 104 weeks |
 | Weekly analysis | 728 route-weeks |
 | Anomalies | 19 total: 3 supported, 16 unexplained |
-| Automated tests | 70 passed; zero failures, errors, or skips |
+| Automated tests | 88 passed; zero failures, errors, or skips |
 | Labeled evaluation | 30 / 30 cases passed |
 | Reproducibility | Five output files identical across three fresh runs |
 | Generative usage | Zero LLM calls and zero generative input/output tokens |

@@ -10,6 +10,7 @@ import streamlit as st
 
 from watchdog_ai.data import load_notes
 from watchdog_ai.pipeline import sha256
+from watchdog_ai.questions import answer_question
 
 ROOT = Path(__file__).resolve().parent
 st.set_page_config(page_title="WATCHDOG · Freight intelligence", page_icon="◈", layout="wide")
@@ -132,7 +133,7 @@ with st.sidebar:
     )
     page = st.radio(
         "Workspace",
-        ["Overview", "Route explorer", "Evidence center", "System health"],
+        ["Overview", "Route explorer", "Evidence center", "Ask WATCHDOG", "System health"],
         key="navigation",
         label_visibility="collapsed",
     )
@@ -200,6 +201,10 @@ titles = {
     "Evidence center": (
         "The context behind the cost.",
         "See which operational notes support an increase, and why others do not.",
+    ),
+    "Ask WATCHDOG": (
+        "Ask about the findings.",
+        "Answers traced to saved route costs and verified evidence.",
     ),
     "System health": (
         "Confidence you can inspect.",
@@ -499,6 +504,72 @@ elif page == "Evidence center":
                 st.caption(
                     "Supporting context identifies a plausible contributor. It does not establish that the entire price increase was justified."
                 )
+
+elif page == "Ask WATCHDOG":
+    st.info(
+        "Ask about costs, unusual increases, or supporting notes. This is a scoped, "
+        "rule-based question interface over saved results—not a general-purpose chatbot. "
+        "It uses no generative API. Explicit routes and years in your question override the selectors."
+    )
+    with st.form("question_form"):
+        scope_columns = st.columns(2)
+        question_route = scope_columns[0].selectbox("Route context", ["Choose a route"] + routes)
+        question_year = scope_columns[1].selectbox(
+            "Year context",
+            ["Choose a year"] + [str(y) for y in sorted(full.week_of.dt.year.unique())],
+        )
+        question = st.text_input(
+            "Your question",
+            placeholder="Why did Chennai to Bangalore get pricier in March 2025?",
+            max_chars=1000,
+        )
+        asked = st.form_submit_button("Ask WATCHDOG", type="primary")
+    st.caption(
+        "Examples: Why did Chennai to Bangalore get pricier in March 2025? · "
+        "Show unexplained findings for Mumbai to Pune in 2025 · "
+        "What notes justified Ahmedabad to Mumbai in January 2025?"
+    )
+    if asked:
+        result = answer_question(
+            question,
+            full,
+            None if question_route == "Choose a route" else question_route,
+            None if question_year == "Choose a year" else int(question_year),
+        )
+        st.session_state["question_answer"] = (
+            question,
+            result,
+            sha256(directory / "full_analysis.csv"),
+        )
+    saved_answer = st.session_state.get("question_answer")
+    if saved_answer:
+        asked_question, result, result_hash = saved_answer
+        if result_hash != sha256(directory / "full_analysis.csv"):
+            st.warning("The analysis changed. Ask again to refresh the answer.")
+        else:
+            st.markdown("**Question**")
+            st.write(asked_question)
+            st.markdown("**Answer**")
+            st.write(result.text)
+            st.caption(
+                "Sources: full_analysis.csv; explanations are reproduced from the saved pipeline results."
+            )
+            for row in result.rows:
+                with st.expander(f"{row['route']} · {row['week_of']} · {row['verdict']}"):
+                    st.write(f"Observed cost: ₹{row['cost_per_tonne_km']:.2f} / tonne-km")
+                    st.write(
+                        f"vs history: {format_change(row['history_pct'])} · vs peers: {format_change(row['peer_pct'])}"
+                    )
+                    st.write(row["reason"])
+                    if row["matched_note_id"]:
+                        st.caption(f"Cited note: {row['matched_note_id']}")
+                    if row["verdict"] != "normal":
+                        st.button(
+                            "Inspect evidence",
+                            key=f"question_{row['route']}_{row['week_of']}",
+                            on_click=navigate,
+                            args=("Evidence center", None, f"{row['route']} · {row['week_of']}"),
+                        )
 
 else:
     heading(

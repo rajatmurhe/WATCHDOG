@@ -68,3 +68,17 @@ def test_health_reports_do_not_verify_different_outputs(dashboard):
     assert any("Report needs review" in m.value for m in app.markdown)
     assert any("does not match" in c.value for c in app.caption)
     assert [m.value for m in app.metric] == ["0", "0", "$0.00"]
+
+
+def test_questions_and_evidence_navigation(dashboard):
+    app, _ = dashboard
+    app.radio(key="navigation").set_value("Ask WATCHDOG").run(timeout=20)
+    next(t for t in app.text_input if t.label == "Your question").set_value(
+        "What notes justified Ahmedabad to Mumbai in January 2025?"
+    )
+    next(b for b in app.button if b.label == "Ask WATCHDOG").click().run(timeout=20)
+    assert not app.exception
+    assert any("N002" in c.value for c in app.caption)
+    next(b for b in app.button if b.label == "Inspect evidence").click().run(timeout=20)
+    assert app.radio(key="navigation").value == "Evidence center"
+    assert app.selectbox(key="evidence_case").value == "Ahmedabad-Mumbai · 2025-01-20"
