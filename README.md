@@ -13,7 +13,7 @@ The dashboard connects every finding to its numerical comparisons, source notes,
 
 > Find unusual shipping costs. Check the evidence. Understand what needs review.
 
-[Local Setup](#local-setup) · [Dashboard](#dashboard) · [Architecture](#architecture) · [Verified Results](#verified-results) · [Technical Guide](docs/technical-guide.md)
+[Quick Start](#quick-start) · [Dashboard](#dashboard) · [Architecture](#architecture) · [Verified Results](#verified-results) · [Technical Guide](docs/technical-guide.md)
 
 ---
 
@@ -99,7 +99,7 @@ The evidence parser supports three reviewed narrative forms from the supplied da
 | Verification | Pytest, Streamlit AppTest, labeled evaluation, SHA-256 checksums |
 | Runtime | Local Python environment; no API key required |
 
-## Local Setup
+## Quick Start
 
 Requires **Python 3.11+**. From a terminal:
 
