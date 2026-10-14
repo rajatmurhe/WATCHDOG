@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools==80.9.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "watchdog-freight"
+version = "1.0.0"
+description = "WATCHDOG: evidence-grounded freight cost monitoring"
+requires-python = ">=3.11"
+dependencies = ["numpy==2.3.2", "pandas==2.3.1"]
+
+[project.optional-dependencies]
+ai = ["sentence-transformers==6.0.1", "torch==2.9.1", "transformers==5.17.0", "huggingface-hub==1.31.0"]
+test = ["pytest==9.1.1"]
+dashboard = ["streamlit==1.48.0", "plotly==6.5.0"]
+
+[project.scripts]
+watchdog = "watchdog_ai.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+markers = ["embedding: executes the real local embedding model (requires AI dependencies and model download)"]
