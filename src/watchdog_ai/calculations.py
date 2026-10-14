@@ -47,7 +47,7 @@ def deviation(current: float, baseline: float | None) -> float | None:
     # A zero baseline has no defined percentage change; it is not 0% change.
     if baseline is None or not math.isfinite(baseline) or baseline <= 0:
         return None
-    value = (current / baseline - 1) * 100
+    value = (current - baseline) / baseline * 100
     if not math.isfinite(value):
         raise ValueError("Percentage comparison overflowed")
     return value

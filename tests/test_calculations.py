@@ -78,6 +78,8 @@ def test_thresholds_and_missing_baselines():
     assert detect(frame, Thresholds(25,25)).is_anomaly.tolist() == [False]*7
     pd.testing.assert_frame_equal(detect(frame), detect(frame))
     assert deviation(1,0) is None
+    assert deviation(120,100) == 20.0
+    assert bool(detect(pd.DataFrame([dict(history_pct=deviation(120,100),peer_pct=0)])).iloc[0].is_anomaly)
     for bad in [0, -1, float("nan"), float("inf")]:
         with pytest.raises(ValueError):
             Thresholds(bad,20)

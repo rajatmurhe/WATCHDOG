@@ -1,5 +1,5 @@
 [build-system]
-requires = ["setuptools==80.9.0"]
+requires = ["setuptools==84.0.0"]
 build-backend = "setuptools.build_meta"
 
 [project]
@@ -12,7 +12,7 @@ dependencies = ["numpy==2.3.2", "pandas==2.3.1"]
 [project.optional-dependencies]
 ai = ["sentence-transformers==6.0.1", "torch==2.13.0", "transformers==5.17.0", "huggingface-hub==1.31.0"]
 test = ["pytest==9.1.1"]
-dashboard = ["streamlit==1.48.0", "plotly==6.5.0"]
+dashboard = ["streamlit==1.48.0", "plotly==6.9.0"]
 
 [project.scripts]
 watchdog = "watchdog_ai.cli:main"

@@ -1,0 +1,31 @@
+case_id,kind,route,week_of,current,history,peer,note_id,expected_anomaly,expected_note,expected_support,rationale
+sample_history,route,Delhi-Jaipur,2024-11-11,,,,,true,,,Official sample: clear unexplained historical and peer increase
+sample_festival,route,Ahmedabad-Mumbai,2025-01-20,,,,,true,N002,,Official sample: festival surcharge applies to route and week
+sample_peer,route,Mumbai-Pune,2025-09-15,,,,,true,,,Official sample: peer anomaly with no cost-impact evidence
+flood_week_one,route,Chennai-Bangalore,2025-02-24,,,,,true,N001,,Flood starts this week and explicitly increases trip costs
+flood_week_two,route,Chennai-Bangalore,2025-03-03,,,,,true,N001,,Flood window extends through March 8
+flood_expired,route,Chennai-Bangalore,2025-03-10,,,,,true,,,Costs remain high after the stated end of disruption
+recovery_is_not_cost,route,Chennai-Bangalore,2025-03-17,,,,,true,,,Recovery note is not evidence of increased costs
+normal_flat,synthetic,A-B,2025-01-20,3,3,3,,false,,,No rise and no unusual comparison
+normal_decrease,synthetic,A-B,2025-01-20,2,3,1,,false,,,Peer premium alone cannot turn a historical decrease into a rise
+clear_history,synthetic,A-B,2025-01-20,4,3,4,,true,,,One-third historical increase is materially unusual
+clear_peer,synthetic,A-B,2025-01-20,4,3.9,3,,true,,,Positive historical trend with a one-third peer premium
+below_boundary,synthetic,A-B,2025-01-20,119.9,100,119.9,,false,,,19.9 percent is below the declared 20 percent policy
+on_boundary,synthetic,A-B,2025-01-20,120,100,120,,true,,,Exactly 20 percent meets the inclusive declared policy
+above_boundary,synthetic,A-B,2025-01-20,120.1,100,120.1,,true,,,20.1 percent exceeds the declared policy
+no_history_high_peer,synthetic,A-B,2025-01-20,4,,3,,true,,,A large peer deviation is visible despite unavailable trend
+no_comparisons,synthetic,A-B,2025-01-20,4,,,,false,,,No comparison exists to establish unusualness
+valid_festival,evidence,Ahmedabad-Mumbai,2025-01-20,,,,N002,,,true,An actual applicable surcharge
+wrong_festival_route,evidence,Mumbai-Pune,2025-01-20,,,,N002,,,false,Correct week but unrelated route
+wrong_direction,evidence,Mumbai-Ahmedabad,2025-01-20,,,,N002,,,false,Reverse direction is a different route
+wrong_festival_week,evidence,Ahmedabad-Mumbai,2025-01-27,,,,N002,,,false,Temporary surcharge week ended
+flood_expiry,evidence,Chennai-Bangalore,2025-03-10,,,,N001,,,false,Flood ended March 8
+fuel_start,evidence,Delhi-Jaipur,2025-05-05,,,,N003,,,true,Contemporaneous nationwide cost impact
+fuel_later,evidence,Delhi-Jaipur,2025-09-15,,,,N003,,,false,No indefinite justification from a start-only fuel note
+excluded_toll,evidence,Delhi-Jaipur,2024-03-11,,,,N004,,,false,Explicitly excludes dataset routes
+maintenance_no_cost,evidence,Mumbai-Delhi,2024-07-29,,,,N005,,,false,No significant cost impact
+stable_demand,evidence,Mumbai-Pune,2025-09-22,,,,N006,,,false,Stable demand supplies no cost-increase assertion
+better_roads,evidence,Delhi-Jaipur,2024-05-20,,,,N007,,,false,Improvement is not increased cost evidence
+normal_movement,evidence,Kolkata-Bhubaneswar,2025-06-09,,,,N008,,,false,Normal movement supplies no cost-increase assertion
+recovery,evidence,Chennai-Bangalore,2025-03-17,,,,N009,,,false,Recovery does not justify new cost increases
+tracking_no_rates,evidence,Mumbai-Pune,2025-10-27,,,,N010,,,false,Transporter rates did not change

@@ -60,6 +60,7 @@ class Result:
 
 def run(shipments_path: str | Path = "data/shipment_records.csv", notes_path: str | Path = "data/context_notes.csv",
         retrieval: str = "embedding", thresholds: Thresholds = Thresholds(), top_k: int = 5) -> Result:
+    input_hashes = {"shipments":sha256(shipments_path), "notes":sha256(notes_path)}
     shipments = load_shipments(shipments_path)
     weekly = weekly_costs(shipments)
     notes = load_notes(notes_path, set(weekly.route))
@@ -95,7 +96,9 @@ def run(shipments_path: str | Path = "data/shipment_records.csv", notes_path: st
             packages[package] = version(package)
         except PackageNotFoundError:
             packages[package] = None
-    manifest = dict(input_sha256={"shipments":sha256(shipments_path),"notes":sha256(notes_path)},
+    if input_hashes != {"shipments":sha256(shipments_path), "notes":sha256(notes_path)}:
+        raise ValueError("Source inputs changed during this run; rerun with stable inputs")
+    manifest = dict(input_sha256=input_hashes,
                     thresholds=asdict(thresholds), top_k=top_k, shipments=len(shipments),
                     routes=weekly.route.nunique(), route_weeks=len(weekly), anomalies=len(submission),
                     justified=sum(r["flagged"]=="No (justified)" for r in submission),
