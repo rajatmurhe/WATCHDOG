@@ -37,6 +37,9 @@ python -m watchdog_ai run --shipments data/shipment_records.csv \
 ```
 
 The installed `watchdog` command is an alias for `python -m watchdog_ai`.
+`constraints.txt` records the full dependency versions from the verified Python
+3.11 installation; `requirements.txt` applies it to the default setup. Lightweight
+installs can also use `python -m pip install -c constraints.txt -e '.[test]'`.
 
 ## What is produced
 
@@ -223,6 +226,11 @@ as actual usage. Coding-assistant usage is outside application telemetry and is 
 claimed to be zero.
 
 ## Review and walkthrough
+
+The optional dashboard reads the saved outputs and uses no separate calculation
+engine. Run `streamlit run app.py` after generating the analysis. It shows route
+rates/baselines, ranked evidence and rejection reasons, model usage, and verification
+reports. It warns when saved checks no longer match the selected output artifacts.
 
 - [Requirements and decisions](docs/requirements.md)
 - [Ten-minute walkthrough and interview preparation](docs/walkthrough.md)

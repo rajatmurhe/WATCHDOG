@@ -32,10 +32,20 @@ def weekly_costs(shipments: pd.DataFrame) -> pd.DataFrame:
         rate = cost / tonne_km
         if not math.isfinite(rate):
             raise ValueError(f"Nonfinite cost per tonne-km for {key}")
-        results.append(dict(origin=key[0], destination=key[1], route_type=key[2], week_of=key[3],
-                            route=f"{key[0]}-{key[1]}", freight_cost_inr=cost, tonne_km=tonne_km,
-                            cost_per_tonne_km=rate, shipment_count=len(group),
-                            shipment_dates=tuple(sorted(set(group["shipment_date"])))))
+        results.append(
+            dict(
+                origin=key[0],
+                destination=key[1],
+                route_type=key[2],
+                week_of=key[3],
+                route=f"{key[0]}-{key[1]}",
+                freight_cost_inr=cost,
+                tonne_km=tonne_km,
+                cost_per_tonne_km=rate,
+                shipment_count=len(group),
+                shipment_dates=tuple(sorted(set(group["shipment_date"]))),
+            )
+        )
     return pd.DataFrame(results).sort_values(["route", "week_of"]).reset_index(drop=True)
 
 
@@ -63,11 +73,22 @@ def add_baselines(weekly: pd.DataFrame) -> pd.DataFrame:
     for row in rows:
         route = (row["origin"], row["destination"], row["route_type"])
         start = row["week_of"] - timedelta(weeks=8)
-        history = [r["cost_per_tonne_km"] for r in by_route[route] if start <= r["week_of"] < row["week_of"]]
-        peers = [r["cost_per_tonne_km"] for r in by_type_week[(row["route_type"], row["week_of"]) ]
-                 if (r["origin"], r["destination"]) != (row["origin"], row["destination"])]
-        row.update(history_baseline=_mean(history), peer_baseline=_mean(peers),
-                   history_observations=len(history), peer_observations=len(peers))
+        history = [
+            r["cost_per_tonne_km"]
+            for r in by_route[route]
+            if start <= r["week_of"] < row["week_of"]
+        ]
+        peers = [
+            r["cost_per_tonne_km"]
+            for r in by_type_week[(row["route_type"], row["week_of"])]
+            if (r["origin"], r["destination"]) != (row["origin"], row["destination"])
+        ]
+        row.update(
+            history_baseline=_mean(history),
+            peer_baseline=_mean(peers),
+            history_observations=len(history),
+            peer_observations=len(peers),
+        )
         row["history_pct"] = deviation(row["cost_per_tonne_km"], row["history_baseline"])
         row["peer_pct"] = deviation(row["cost_per_tonne_km"], row["peer_baseline"])
     return pd.DataFrame(rows)
@@ -80,5 +101,6 @@ def detect(analysis: pd.DataFrame, thresholds: Thresholds = Thresholds()) -> pd.
     result["unusual_peers"] = result["peer_pct"].ge(thresholds.peer_pct)
     result["trend_unavailable"] = result["history_pct"].isna()
     result["is_anomaly"] = (result["is_rising"] | result["trend_unavailable"]) & (
-        result["unusual_history"] | result["unusual_peers"])
+        result["unusual_history"] | result["unusual_peers"]
+    )
     return result

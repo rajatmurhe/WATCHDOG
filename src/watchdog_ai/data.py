@@ -14,8 +14,16 @@ from pathlib import Path
 import pandas as pd
 
 SHIPMENT_COLUMNS = (
-    "shipment_id", "origin", "destination", "route_type", "material",
-    "quantity_tonnes", "distance_km", "freight_cost_inr", "shipment_date", "transporter",
+    "shipment_id",
+    "origin",
+    "destination",
+    "route_type",
+    "material",
+    "quantity_tonnes",
+    "distance_km",
+    "freight_cost_inr",
+    "shipment_date",
+    "transporter",
 )
 NOTE_COLUMNS = ("note_id", "date", "applies_to", "note")
 
@@ -49,7 +57,9 @@ def read_rows(path: str | Path, required: tuple[str, ...]) -> list[dict[str, str
                 raise InputError(f"{path}, row {line}: wrong field count; check CSV quoting")
             for field in required:
                 if not row[field] or row[field] != row[field].strip():
-                    raise InputError(f"{path}, row {line}, {field}: blank or surrounding whitespace")
+                    raise InputError(
+                        f"{path}, row {line}, {field}: blank or surrounding whitespace"
+                    )
             rows.append(row)
     return rows
 
@@ -88,9 +98,15 @@ def load_shipments(path: str | Path) -> pd.DataFrame:
                 value = float(raw[field])
             except ValueError as exc:
                 raise InputError(f"{location}, {field}: expected a number") from exc
-            if not math.isfinite(value) or value < 0 or (field != "freight_cost_inr" and value == 0):
-                raise InputError(f"{location}, {field}: must be finite and "
-                                 + ("nonnegative" if field == "freight_cost_inr" else "positive"))
+            if (
+                not math.isfinite(value)
+                or value < 0
+                or (field != "freight_cost_inr" and value == 0)
+            ):
+                raise InputError(
+                    f"{location}, {field}: must be finite and "
+                    + ("nonnegative" if field == "freight_cost_inr" else "positive")
+                )
             row[field] = value
         product = row["quantity_tonnes"] * row["distance_km"]
         if not math.isfinite(product) or product <= 0:
@@ -122,5 +138,7 @@ def load_notes(path: str | Path, routes: set[str] | None = None) -> list[Note]:
         location = f"{path}, row {line} ({row['note_id']})"
         if routes is not None and row["applies_to"] not in routes | {"All Routes"}:
             raise InputError(f"{location}: unknown applies_to route {row['applies_to']!r}")
-        notes.append(Note(row["note_id"], iso_date(row["date"], location), row["applies_to"], row["note"]))
+        notes.append(
+            Note(row["note_id"], iso_date(row["date"], location), row["applies_to"], row["note"])
+        )
     return sorted(notes, key=lambda note: note.note_id)
