@@ -258,14 +258,15 @@ def main():
         all_checks_passed=not errors
         and schema_ok
         and actual_keys == expected_anomalies
-        and all(p["passed"] for p in qa),
+        and all(p["passed"] for p in qa)
+        and paraphrase_check.accepted,
         reproduction_command="python scripts/audit_assignment.py (exit 1 when any assertion or Q&A probe fails)",
         paraphrase_generalization_probe=dict(
             note=paraphrased.text,
             expected_support_on_semantic_reading=True,
             actual_accepted=paraphrase_check.accepted,
             actual_reason=paraphrase_check.detail,
-            interpretation="Known conservative-parser limitation; not a fabricated justification.",
+            interpretation="Reviewed festival paraphrase is now supported; arbitrary unfamiliar prose still requires review.",
         ),
         rubric_source="FreightTiger_Intern_CaseStudy.pdf, pages 1-2",
         reference_method="Raw CSV + Decimal(40); no production calculation functions. 1e-10 absolute tolerance.",
@@ -327,7 +328,7 @@ def main():
             criterion="Did you use AI meaningfully?",
             status="pass_with_generalization_limit",
             evidence="Actual local MiniLM inference; expected notes rank first for all three justified rows.",
-            limitation="Evidence acceptance uses three strict assertion patterns. A valid paraphrase was rejected. Q&A is rule-based lookup, not generative reasoning.",
+            limitation="Evidence acceptance uses reviewed patterns for three event types, including the audited festival paraphrase. General paraphrase recall is not established. Q&A is rule-based lookup, not generative reasoning.",
         ),
         dict(
             criterion="Can we trust it?",
@@ -355,7 +356,7 @@ def main():
             criterion="Is the code clean?",
             status="qualitative_review_mostly_meets",
             evidence="Backend validation, calculations, retrieval, evidence, CLI, evaluation and reproducibility are separate modules with tests.",
-            limitation="The 692-line Streamlit entry point mixes layout and orchestration; Q&A language matching is brittle. No numeric code-quality score inferred.",
+            limitation="The Streamlit entry point still mixes layout and orchestration. Q&A status parsing is isolated and regression-tested, but remains scoped language matching. No numeric code-quality score inferred.",
         ),
         dict(
             criterion="Can you explain your work?",

@@ -85,3 +85,41 @@ def test_unsupported_aggregate(analysis):
 def test_unrelated_why_question_with_scope(analysis):
     answer = answer_question("Why is the sky blue?", analysis, "Mumbai-Pune", 2025)
     assert not answer.rows and "Ask about route costs" in answer.text
+
+
+@pytest.mark.parametrize(
+    "phrase,expected",
+    [
+        ("without supporting notes", {"2025-03-10", "2025-03-17"}),
+        ("without any evidence", {"2025-03-10", "2025-03-17"}),
+        ("lacking justification", {"2025-03-10", "2025-03-17"}),
+        ("that are not unexplained", {"2025-03-03"}),
+        ("that are not unsupported", {"2025-03-03"}),
+        ("that aren't justified", {"2025-03-10", "2025-03-17"}),
+        ("that were unjustified", {"2025-03-10", "2025-03-17"}),
+        ("with supporting notes", {"2025-03-03"}),
+        ("with verified evidence", {"2025-03-03"}),
+    ],
+)
+def test_status_language_variations(analysis, phrase, expected):
+    answer = answer_question(
+        f"Show findings {phrase} for Chennai to Bangalore in March 2025", analysis
+    )
+    assert {row["week_of"] for row in answer.rows} == expected
+    assert "Showing" in answer.text
+
+
+@pytest.mark.parametrize(
+    "phrase",
+    [
+        "supported and unexplained",
+        "not without evidence",
+        "not not justified",
+        "excluding unexplained",
+    ],
+)
+def test_conflicting_or_nested_status_clarifies(analysis, phrase):
+    answer = answer_question(
+        f"Show findings {phrase} for Chennai to Bangalore in March 2025", analysis
+    )
+    assert not answer.rows and "could not resolve" in answer.text

@@ -63,9 +63,9 @@
     "src/watchdog_ai/cli.py": "1ce09ab5459d6ffecbb51b2f20cdbccaa8ba716e525ff44c845e3081b44bd0c2",
     "src/watchdog_ai/data.py": "1367e5637320b9e39a80ac279fab78b81a004262b364f8915cf7b3ffcee48e64",
     "src/watchdog_ai/evaluation.py": "b698e02f93ffee6ae86a65f8206aafb202a09704a295c015990b468c74fad219",
-    "src/watchdog_ai/evidence.py": "361312d45337a8636cc052426c8753cc61fdc66e058ebac30626ec5bf5a4c115",
+    "src/watchdog_ai/evidence.py": "f8ef4b3b386d883df3ad4fa646b8e8fe42fea6e1d0c53eb1dae5197470eb54b2",
     "src/watchdog_ai/pipeline.py": "5d13978db7670cf43125e9e5cfdac36e71f345d1bd14c4d8f6817a6dc6418cd0",
-    "src/watchdog_ai/questions.py": "949474f57731f5bd1bc4ee023fac074d26cbe198cfe011f963a147f52ec0f958",
+    "src/watchdog_ai/questions.py": "2fb7f165cad5cda66e23ff8ed5883a00d0e228cfbf589344a625b272fdc085eb",
     "src/watchdog_ai/reproducibility.py": "b9e5a1279a211490fc6ffa6c83e9eced756e18b76d408831fe26e54c142d7b77",
     "src/watchdog_ai/retrieval.py": "79145c9c1e9a4a10e6bfa6cb1965eb7a4e33d1a30de1f3cec5019f1727883989",
     "tests/conftest.py": "58422e083fd6c49aa8bb92b7d8ca66570ef085e401045923d9f13ac2dfe86a5d",
@@ -73,16 +73,16 @@
     "tests/test_dashboard.py": "bc48ac68a8728ce91c1356cf1e49d485ef995b577bc7839812bbe2628b613016",
     "tests/test_data.py": "14d4d516a6067917db00d4e3bd828500789b596172ffa2ca10a47b24cc4d41f7",
     "tests/test_evaluation.py": "5a6101f1ffe8ee982c7b1b8660bb1115db886ea28354d1a50fee22f76ed0f38e",
-    "tests/test_evidence.py": "fede440970ddf9393d60d5423ca51729942845e97680d05ef69c46d9401fb2ae",
+    "tests/test_evidence.py": "66eea48954f33d10b74cca2af67384d736fe8ac901de45230fca87d4fd1b8392",
     "tests/test_failures.py": "3b7e5754c1a24fa9b5e942fd3218061f63cea35720d7089f0faabc3c40c78058",
     "tests/test_pipeline.py": "348f2c86cc0f6264a2b207241961470847040101bb90409676c5461e6fb8d07f",
-    "tests/test_questions.py": "dbc37feb1040cc639aaa3d6255198be4985a9ecd235dcccd1f4f50f7236ebc6e"
+    "tests/test_questions.py": "c4de4664582ebaf70bf0b922d491a5a69efc1bb00cee9df2adf4dab2cedebec1"
   },
   "submission_sha256": "7bf97646c160325d87e34eb175b5afc29d4bb2dd85f401cc83b2cfae6bc3ef26",
   "tests": {
     "errors": 0,
     "failures": 0,
     "skipped": 0,
-    "total": 88
+    "total": 109
   }
 }

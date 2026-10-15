@@ -92,3 +92,32 @@ def test_positive_assertion_with_appended_contradiction_and_new_id(notes):
     assert not verify(
         wrong, {wrong.note_id: wrong}, wrong.applies_to, wrong.date, (wrong.date,)
     ).accepted
+
+
+@pytest.mark.parametrize("cause", ["led to", "caused", "resulted in"])
+def test_reviewed_festival_paraphrases(cause):
+    note = Note(
+        "new-festival",
+        date(2025, 1, 20),
+        "Ahmedabad-Mumbai",
+        f"Festival demand and limited truck availability {cause} a temporary freight surcharge on Ahmedabad-Mumbai this week.",
+    )
+    assert verify(note, {note.note_id: note}, note.applies_to, note.date, (note.date,)).accepted
+    assert not verify(note, {note.note_id: note}, "Mumbai-Pune", note.date, (note.date,)).accepted
+    later = date(2025, 1, 27)
+    assert not verify(note, {note.note_id: note}, note.applies_to, later, (later,)).accepted
+
+
+@pytest.mark.parametrize(
+    "text",
+    [
+        "Festival demand and limited truck availability did not cause a temporary freight surcharge on Ahmedabad-Mumbai this week.",
+        "Festival demand and limited truck availability might have caused a temporary freight surcharge on Ahmedabad-Mumbai this week.",
+        "Festival demand and limited truck availability led to a temporary freight surcharge on Ahmedabad-Mumbai this week. Rates were unchanged.",
+        "Festival demand and limited truck availability led to a temporary freight surcharge on Mumbai-Pune this week.",
+        "Festival demand and limited truck availability led to a temporary freight surcharge on Ahmedabad-Mumbai this week, except this transporter.",
+    ],
+)
+def test_paraphrase_safeguards(text):
+    note = Note("untrusted-festival", date(2025, 1, 20), "Ahmedabad-Mumbai", text)
+    assert not verify(note, {note.note_id: note}, note.applies_to, note.date, (note.date,)).accepted

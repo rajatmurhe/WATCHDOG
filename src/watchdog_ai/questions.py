@@ -15,6 +15,45 @@ class Answer:
     rows: list[dict] = field(default_factory=list)
 
 
+# Match complete intent phrases before their component words so negation cannot
+# accidentally select the opposite verdict. Consume each match once.
+_STATUS_PHRASES = re.compile(
+    r"\b(?P<negative>not\s+(?:unexplained|unsupported|unjustified|justified|supported|explained))\b"
+    r"|\b(?P<absence>(?:without|no|lacking)\s+(?:(?:any|verified)\s+)?(?:supporting\s+)?(?:notes?|evidence|support|justification))\b"
+    r"|\b(?P<presence>with\s+(?:(?:a|any|verified)\s+)?(?:supporting\s+)?(?:notes?|evidence|support|justification))\b"
+    r"|\b(?P<status>unexplained|unsupported|unjustified|justified|supported|explained)\b"
+)
+
+
+def status_intent(question: str) -> str | None:
+    """Return a verdict filter, or request clarification for conflicting phrases."""
+    normalized = re.sub(r"\b(?:aren't|weren't|isn't|wasn't)\b", "not", question)
+    intents = set()
+    for match in _STATUS_PHRASES.finditer(normalized):
+        if match["negative"]:
+            word = match["negative"].split()[-1]
+            intents.add(
+                "supported"
+                if word in {"unexplained", "unsupported", "unjustified"}
+                else "unexplained"
+            )
+        elif match["absence"]:
+            intents.add("unexplained")
+        elif match["presence"]:
+            intents.add("supported")
+        else:
+            intents.add(
+                "unexplained"
+                if match["status"] in {"unexplained", "unsupported", "unjustified"}
+                else "supported"
+            )
+    # Unsupported negation is safer to clarify than silently ignore.
+    remainder = _STATUS_PHRASES.sub("", normalized)
+    if re.search(r"\b(not|without|neither|except|excluding)\b", remainder):
+        return "ambiguous"
+    return "ambiguous" if len(intents) > 1 else next(iter(intents), None)
+
+
 def answer_question(
     question: str, analysis: pd.DataFrame, route: str | None = None, year: int | None = None
 ) -> Answer:
@@ -31,11 +70,16 @@ def answer_question(
             "I can report saved findings, but cannot invent explanations or predict future costs."
         )
     if not re.search(
-        r"\b(costs?|pricier|expensive|increase[sd]?|flags?|flagged|anomal\w*|unexplained|justified|supported|notes?|evidence|findings|summary)\b",
+        r"\b(costs?|pricier|expensive|increase[sd]?|unjustified|unsupported|explained|flags?|flagged|anomal\w*|unexplained|justified|supported|notes?|evidence|findings|summary)\b",
         q,
     ):
         return Answer(
             "Ask about route costs, unusual increases, supporting notes, or unexplained findings."
+        )
+    intent = status_intent(q)
+    if intent == "ambiguous":
+        return Answer(
+            "Please ask for either supported findings or unexplained findings. I could not resolve that filter safely."
         )
     routes = sorted(analysis.route.unique())
     if re.search(
@@ -110,9 +154,9 @@ def answer_question(
         f"{len(supported)} with supporting context and {len(unexplained)} unexplained. "
         "These are saved findings, not proof of causation. Months are grouped by the week's Monday."
     )
-    if re.search(r"\bnot (?:justified|supported)\b|\b(unexplained|unsupported)\b", q):
+    if intent == "unexplained":
         result = unexplained
-    elif re.search(r"\b(justified|supported)\b", q):
+    elif intent == "supported":
         result = supported
     elif re.search(
         r"\b(why|pricier|increase[sd]?|flag\w*|anomal\w*|notes?|evidence|findings)\b", q
@@ -120,6 +164,8 @@ def answer_question(
         result = unusual
     else:
         result = frame
+    if intent:
+        text += f" Showing {len(result)} {intent} findings."
     if result.empty:
         text += " No findings match that question in this scope."
     rows = result.sort_values("week_of").to_dict("records")

@@ -63,7 +63,7 @@ Only its header is read as the formatting contract.
 ## Verified results
 
 The final semantic run produces **19 anomalies: 3 supported and 16 unexplained**.
-All **88 tests pass**, with no failures or skips, including real embedding inference
+All **109 tests pass**, with no failures or skips, including real embedding inference
 and the dashboard. The three official numerical examples match. All 30 evaluation cases pass:
 16/16 detection cases, 7/7 route citation decisions (including 3/3 positive note
 matches), and zero false justifications across 16 negative support cases. These
@@ -188,7 +188,7 @@ Similarity only proposes evidence. Verification requires:
 1. The note ID, date, route metadata, and complete text match the current source's
    SHA-256 fingerprint. Missing or changed source records fail closed.
 2. The directional route matches, or scope is genuinely `All Routes`.
-3. The full narrative matches one of three supported assertion forms: dated flood
+3. The full narrative matches one of three supported event types: dated flood
    detours with recovery, a temporary festival surcharge, or nationwide diesel-driven
    transportation-cost increases. Matching a keyword is insufficient. Additional
    contradictory text, exclusions, normal/recovery-only notes, and unfamiliar prose
@@ -196,6 +196,8 @@ Similarity only proposes evidence. Verification requires:
 4. The inclusive effective dates overlap actual shipment dates. Flooding ends on
    March 8; March 9 recovery cannot justify the following week. Start-only notes
    end at that week's Sunday. Fuel inflation is not an indefinite explanation.
+
+Festival assertions also accept reviewed causal wording such as “Festival demand and limited truck availability led to a temporary freight surcharge on Ahmedabad-Mumbai this week.” The same route, effective-date and source checks apply; negated, uncertain or contradictory versions are rejected.
 
 This parser is deliberately narrow and tailored to the supplied note *forms*.
 It is **not general natural-language inference**. A differently phrased genuine
@@ -296,3 +298,5 @@ Examples:
 - What notes justified Ahmedabad to Mumbai in January 2025?
 
 This is a limited natural-language interface, not an LLM or general language understanding. It supports one directional route, one year, and optionally one named month per question. Exact dates, relative periods, cross-route comparisons, arbitrary aggregates, and forecasts are not supported. It makes zero additional embedding or generative calls; question processing has no API charges. Tests cover actual saved explanations, missing scope, reversed/unknown routes, empty periods, explicit overrides, negated support, and evidence navigation.
+
+Status filters recognize “without supporting notes”, “unjustified”, and “not unexplained”. Complete phrases are resolved before individual words; conflicting filters and unsupported negation ask for clarification. The response states which subset is shown.

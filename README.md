@@ -5,7 +5,7 @@
 [![Pandas](https://img.shields.io/badge/Pandas-Analytics-150458?style=for-the-badge&logo=pandas&logoColor=white)](src/watchdog_ai/calculations.py)
 [![MiniLM](https://img.shields.io/badge/MiniLM-Local_Embeddings-FFD21E?style=for-the-badge&logo=huggingface&logoColor=black)](src/watchdog_ai/retrieval.py)
 [![Plotly](https://img.shields.io/badge/Plotly-Interactive_Charts-3F4F75?style=for-the-badge&logo=plotly&logoColor=white)](app.py)
-[![Tests](https://img.shields.io/badge/Verified_Tests-88_Passed-177568?style=for-the-badge&logo=pytest&logoColor=white)](reports/verification.json)
+[![Tests](https://img.shields.io/badge/Verified_Tests-109_Passed-177568?style=for-the-badge&logo=pytest&logoColor=white)](reports/verification.json)
 
 WATCHDOG is an explainable freight cost monitoring application built for Freight Tiger’s Software Engineering Intern (AI) case study. It analyzes shipment costs week by week, detects unusual increases, and retrieves operational notes to check whether those increases have supporting evidence.
 
@@ -94,7 +94,7 @@ Semantic similarity proposes candidate notes. It does not decide whether an incr
 
 A note must pass source, route, date, and cost-impact checks before it can support a verdict. Explanations use verified fields and deterministic templates; no generative LLM writes the final reason.
 
-The evidence parser supports three reviewed narrative forms from the supplied dataset. It is intentionally narrow: unfamiliar wording may be rejected even when a human would accept it. Supporting context identifies a plausible contributor, not proof that it explains the full price increase.
+The evidence parser supports reviewed patterns for three event types from the supplied dataset. It is intentionally narrow: unfamiliar wording may be rejected even when a human would accept it. Supporting context identifies a plausible contributor, not proof that it explains the full price increase.
 
 ## Technology Stack
 
@@ -141,7 +141,7 @@ These results describe the supplied case-study dataset and saved verification re
 | Input coverage | 2,940 shipments, 7 routes, 104 weeks |
 | Weekly analysis | 728 route-weeks |
 | Anomalies | 19 total: 3 supported, 16 unexplained |
-| Automated tests | 88 passed; zero failures, errors, or skips |
+| Automated tests | 109 passed; zero failures, errors, or skips |
 | Labeled evaluation | 30 / 30 cases passed |
 | Reproducibility | Five output files identical across three fresh runs |
 | Generative usage | Zero LLM calls and zero generative input/output tokens |

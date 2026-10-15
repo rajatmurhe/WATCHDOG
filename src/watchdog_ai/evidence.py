@@ -47,6 +47,14 @@ _SURCHARGE = re.compile(
     r"on the (?P<route>.+?) corridor due to high demand and limited truck availability\.",
     re.I,
 )
+# Reviewed alternative causal phrasing. Full matching still rejects proposals,
+# negation, exclusions, additional sentences and mismatched route metadata.
+_SURCHARGE_CAUSAL = re.compile(
+    r"(?:High festival demand|Festival demand) and limited truck availability "
+    r"(?:led to|caused|resulted in) a temporary (?:freight |transport )?surcharge "
+    r"on (?P<route>.+?) this week\.",
+    re.I,
+)
 _FUEL = re.compile(
     r"Diesel prices rose nationwide starting this week, pushing up transportation "
     r"costs across all routes by roughly (?P<low>\d+(?:\.\d+)?)-(?P<high>\d+(?:\.\d+)?)%\.",
@@ -98,7 +106,7 @@ def interpret(note: Note) -> Interpretation | None:
         if start != note.date or recovery != end + timedelta(days=1) or (end - start).days > 31:
             return None
         return Interpretation(start, end, "flood detours increased trip costs", match["route"])
-    if match := _SURCHARGE.fullmatch(text):
+    if match := (_SURCHARGE.fullmatch(text) or _SURCHARGE_CAUSAL.fullmatch(text)):
         if match["route"] != note.applies_to or note.applies_to == "All Routes":
             return None
         return Interpretation(
