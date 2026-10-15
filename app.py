@@ -13,7 +13,12 @@ from watchdog_ai.pipeline import sha256
 from watchdog_ai.questions import answer_question
 
 ROOT = Path(__file__).resolve().parent
-st.set_page_config(page_title="WATCHDOG · Freight intelligence", page_icon="◈", layout="wide")
+st.set_page_config(
+    page_title="WATCHDOG · Freight intelligence",
+    page_icon="◈",
+    layout="wide",
+    initial_sidebar_state="expanded",
+)
 st.markdown(f"<style>{(ROOT / 'assets/dashboard.css').read_text()}</style>", unsafe_allow_html=True)
 
 

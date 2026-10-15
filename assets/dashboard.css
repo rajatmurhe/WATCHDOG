@@ -85,3 +85,55 @@ button[kind="secondary"] { background:#fff; border:1px solid #dbe4d9; border-rad
 [data-testid="stSidebar"] [role="radiogroup"] label { max-width:none; width:100%; box-sizing:border-box; }
 [data-testid="stSidebar"] [data-testid="stRadio"] label:focus-within { outline:2px solid #dcebc7; outline-offset:3px; }
 @media (max-width:640px) { [data-testid="stVerticalBlock"][class*="st-key-panel_"] { padding:14px; } .section-title { flex-wrap:wrap; } }
+
+/* Permanent navigation: reserve its own column instead of overlaying content. */
+[data-testid="stSidebar"] {
+  position:relative !important;
+  transform:none !important;
+  margin-left:0 !important;
+  width:246px !important;
+  flex:0 0 246px !important;
+  transition:none !important;
+}
+[data-testid="stMain"] { position:relative !important; min-width:0; flex:1 1 0; }
+[data-testid="stSidebarCollapseButton"],
+[data-testid="stExpandSidebarButton"] { display:none !important; }
+
+/* On narrow screens navigation remains visible above the workspace. */
+@media (max-width:1023px) {
+  [data-testid="stAppViewContainer"] { flex-direction:column; overflow-y:auto; }
+  [data-testid="stSidebar"] {
+    flex:0 0 auto !important;
+    width:100% !important;
+    min-width:100% !important;
+    max-width:100% !important;
+    height:auto !important;
+    overflow:visible !important;
+    box-shadow:none !important;
+  }
+  [data-testid="stSidebarContent"] { height:auto; overflow:visible; }
+  [data-testid="stSidebarUserContent"] { padding:1rem; }
+  [data-testid="stSidebarHeader"], .sidebar-note, .sidebar-footer { display:none; }
+  [data-testid="stSidebar"] > div:first-child { padding-top:0; }
+  .brand { margin:0 0 12px; }
+  .nav-label { display:none; }
+  [data-testid="stSidebar"] [role="radiogroup"] { flex-direction:row; flex-wrap:wrap; gap:4px; }
+  [data-testid="stSidebar"] [data-testid="stRadio"] label { width:auto; padding:8px 10px; }
+  [data-testid="stMain"] { flex:0 0 auto; width:100%; height:auto !important; min-height:0; overflow:visible; }
+  .block-container { padding:1.5rem 1rem 2rem; }
+  [data-testid="stHeader"] { display:none; }
+}
+
+/* Keep labels readable and give the overview chart room on compact laptops. */
+[data-testid="stMetricLabel"] p { white-space:normal !important; overflow:visible; }
+@media (max-width:1279px) {
+  [data-testid="stHorizontalBlock"]:has(> [data-testid="stColumn"] .st-key-panel_trends) {
+    flex-wrap:wrap;
+  }
+  [data-testid="stHorizontalBlock"]:has(> [data-testid="stColumn"] .st-key-panel_trends) > [data-testid="stColumn"] {
+    flex:1 1 100% !important;
+    width:100% !important;
+    min-width:0 !important;
+  }
+  .section-title { flex-wrap:wrap; }
+}

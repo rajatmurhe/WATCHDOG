@@ -1,0 +1,169 @@
+{
+  "scope": "Frontend layout only; the prior complete verification report is retained as historical evidence.",
+  "dashboard_tests": {
+    "passed": 5,
+    "command": "python -m pytest tests/test_dashboard.py -q"
+  },
+  "browser_checks": [
+    {
+      "width": 1440,
+      "page": "Overview",
+      "non_overlapping": true,
+      "footer_reachable": true
+    },
+    {
+      "width": 1440,
+      "page": "Route explorer",
+      "non_overlapping": true,
+      "footer_reachable": true
+    },
+    {
+      "width": 1440,
+      "page": "Evidence center",
+      "non_overlapping": true,
+      "footer_reachable": true
+    },
+    {
+      "width": 1440,
+      "page": "Ask WATCHDOG",
+      "non_overlapping": true,
+      "footer_reachable": true
+    },
+    {
+      "width": 1440,
+      "page": "System health",
+      "non_overlapping": true,
+      "footer_reachable": true
+    },
+    {
+      "width": 1024,
+      "page": "Overview",
+      "non_overlapping": true,
+      "footer_reachable": true
+    },
+    {
+      "width": 1024,
+      "page": "Route explorer",
+      "non_overlapping": true,
+      "footer_reachable": true
+    },
+    {
+      "width": 1024,
+      "page": "Evidence center",
+      "non_overlapping": true,
+      "footer_reachable": true
+    },
+    {
+      "width": 1024,
+      "page": "Ask WATCHDOG",
+      "non_overlapping": true,
+      "footer_reachable": true
+    },
+    {
+      "width": 1024,
+      "page": "System health",
+      "non_overlapping": true,
+      "footer_reachable": true
+    },
+    {
+      "width": 900,
+      "page": "Overview",
+      "non_overlapping": true,
+      "footer_reachable": true
+    },
+    {
+      "width": 900,
+      "page": "Route explorer",
+      "non_overlapping": true,
+      "footer_reachable": true
+    },
+    {
+      "width": 900,
+      "page": "Evidence center",
+      "non_overlapping": true,
+      "footer_reachable": true
+    },
+    {
+      "width": 900,
+      "page": "Ask WATCHDOG",
+      "non_overlapping": true,
+      "footer_reachable": true
+    },
+    {
+      "width": 900,
+      "page": "System health",
+      "non_overlapping": true,
+      "footer_reachable": true
+    },
+    {
+      "width": 768,
+      "page": "Overview",
+      "non_overlapping": true,
+      "footer_reachable": true
+    },
+    {
+      "width": 768,
+      "page": "Route explorer",
+      "non_overlapping": true,
+      "footer_reachable": true
+    },
+    {
+      "width": 768,
+      "page": "Evidence center",
+      "non_overlapping": true,
+      "footer_reachable": true
+    },
+    {
+      "width": 768,
+      "page": "Ask WATCHDOG",
+      "non_overlapping": true,
+      "footer_reachable": true
+    },
+    {
+      "width": 768,
+      "page": "System health",
+      "non_overlapping": true,
+      "footer_reachable": true
+    },
+    {
+      "width": 390,
+      "page": "Overview",
+      "non_overlapping": true,
+      "footer_reachable": true
+    },
+    {
+      "width": 390,
+      "page": "Route explorer",
+      "non_overlapping": true,
+      "footer_reachable": true
+    },
+    {
+      "width": 390,
+      "page": "Evidence center",
+      "non_overlapping": true,
+      "footer_reachable": true
+    },
+    {
+      "width": 390,
+      "page": "Ask WATCHDOG",
+      "non_overlapping": true,
+      "footer_reachable": true
+    },
+    {
+      "width": 390,
+      "page": "System health",
+      "non_overlapping": true,
+      "footer_reachable": true
+    }
+  ],
+  "final_overview_recheck_widths": [
+    1024,
+    900,
+    390
+  ],
+  "dependency_check": "No broken requirements found",
+  "source_sha256": {
+    "app.py": "8b5c2affc94c7c3edfff5506b1690bda24a580a7e9710c27fd8c146bb55aa338",
+    "assets/dashboard.css": "eb58f8fad0f78df40fe9a9b333769bef8553f6ee1731021994666d69e9aa9c0f"
+  }
+}

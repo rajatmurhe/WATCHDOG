@@ -81,3 +81,10 @@ There is no paid generative model, external database, or duplicated frontend mat
 - [x] Desktop and mobile question form checks.
 
 Question answering is deterministic and makes no additional model/API calls. It supports one route, one year, and an optional named month; it is not open-ended conversational inference.
+
+## Persistent navigation layout
+
+The sidebar opens expanded and cannot be collapsed. Desktop content has its own
+column beside it. Below 1024 pixels, navigation stays visible above the dashboard
+so charts and tables retain the screen width. This layout change does not modify
+analysis outputs.
