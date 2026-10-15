@@ -1,0 +1,329 @@
+{
+  "all_checks_passed": false,
+  "reproduction_command": "python scripts/audit_assignment.py (exit 1 when any assertion or Q&A probe fails)",
+  "paraphrase_generalization_probe": {
+    "note": "Festival demand and limited truck availability led to a temporary freight surcharge on Ahmedabad-Mumbai this week.",
+    "expected_support_on_semantic_reading": true,
+    "actual_accepted": false,
+    "actual_reason": "no supported, unambiguous cost-increase assertion; manual review required",
+    "interpretation": "Known conservative-parser limitation; not a fabricated justification."
+  },
+  "rubric_source": "FreightTiger_Intern_CaseStudy.pdf, pages 1-2",
+  "reference_method": "Raw CSV + Decimal(40); no production calculation functions. 1e-10 absolute tolerance.",
+  "core": {
+    "shipments": 2940,
+    "route_weeks": 728,
+    "all_fields_match": true,
+    "errors": [],
+    "maximum_absolute_error": {
+      "cost_per_tonne_km": 7.476080048481704e-16,
+      "peer_baseline": 7.476080048481704e-16,
+      "peer_pct": 4.178523195115731e-14,
+      "history_baseline": 4.670673099181317e-16,
+      "history_pct": 3.979928145390469e-14
+    },
+    "anomalies_match": true,
+    "schema_matches": true,
+    "official_examples": [
+      {
+        "route": "Delhi-Jaipur",
+        "week_of": "2024-11-11",
+        "passed": true
+      },
+      {
+        "route": "Ahmedabad-Mumbai",
+        "week_of": "2025-01-20",
+        "passed": true
+      },
+      {
+        "route": "Mumbai-Pune",
+        "week_of": "2025-09-15",
+        "passed": true
+      }
+    ]
+  },
+  "justified_row_spot_checks": [
+    {
+      "route": "Ahmedabad-Mumbai",
+      "week_of": "2025-01-20",
+      "note_id": "N002",
+      "passed": true,
+      "covered_days": 5,
+      "observed_days": 5,
+      "partial_week": false
+    },
+    {
+      "route": "Chennai-Bangalore",
+      "week_of": "2025-02-24",
+      "note_id": "N001",
+      "passed": true,
+      "covered_days": 4,
+      "observed_days": 4,
+      "partial_week": false
+    },
+    {
+      "route": "Chennai-Bangalore",
+      "week_of": "2025-03-03",
+      "note_id": "N001",
+      "passed": true,
+      "covered_days": 4,
+      "observed_days": 5,
+      "partial_week": true
+    }
+  ],
+  "semantic_retrieval_spot_checks": [
+    {
+      "route": "Ahmedabad-Mumbai",
+      "week_of": "2025-01-20",
+      "expected_note": "N002",
+      "rank": 1,
+      "retrieved": true
+    },
+    {
+      "route": "Chennai-Bangalore",
+      "week_of": "2025-02-24",
+      "expected_note": "N001",
+      "rank": 1,
+      "retrieved": true
+    },
+    {
+      "route": "Chennai-Bangalore",
+      "week_of": "2025-03-03",
+      "expected_note": "N001",
+      "rank": 1,
+      "retrieved": true
+    }
+  ],
+  "stretch_questions": {
+    "passed": 4,
+    "total": 7,
+    "probes": [
+      {
+        "question": "Why did Chennai to Bangalore get pricier in March 2025?",
+        "expected_weeks": [
+          "2025-03-03",
+          "2025-03-10",
+          "2025-03-17"
+        ],
+        "actual_weeks": [
+          "2025-03-03",
+          "2025-03-10",
+          "2025-03-17"
+        ],
+        "passed": true,
+        "answer": "Chennai-Bangalore \u00b7 March 2025: 5 observed route-weeks; 3 unusual, 1 with supporting context and 2 unexplained. These are saved findings, not proof of causation. Months are grouped by the week's Monday."
+      },
+      {
+        "question": "Show unexplained findings for Chennai to Bangalore in March 2025",
+        "expected_weeks": [
+          "2025-03-10",
+          "2025-03-17"
+        ],
+        "actual_weeks": [
+          "2025-03-10",
+          "2025-03-17"
+        ],
+        "passed": true,
+        "answer": "Chennai-Bangalore \u00b7 March 2025: 5 observed route-weeks; 3 unusual, 1 with supporting context and 2 unexplained. These are saved findings, not proof of causation. Months are grouped by the week's Monday."
+      },
+      {
+        "question": "What notes justified Ahmedabad to Mumbai in January 2025?",
+        "expected_weeks": [
+          "2025-01-20"
+        ],
+        "actual_weeks": [
+          "2025-01-20"
+        ],
+        "passed": true,
+        "answer": "Ahmedabad-Mumbai \u00b7 January 2025: 4 observed route-weeks; 1 unusual, 1 with supporting context and 0 unexplained. These are saved findings, not proof of causation. Months are grouped by the week's Monday."
+      },
+      {
+        "question": "Why did Chennai to Bangalore get pricier in January 2024?",
+        "expected_weeks": [],
+        "actual_weeks": [],
+        "passed": true,
+        "answer": "Chennai-Bangalore \u00b7 January 2024: 5 observed route-weeks; 0 unusual, 0 with supporting context and 0 unexplained. These are saved findings, not proof of causation. Months are grouped by the week's Monday. No findings match that question in this scope."
+      },
+      {
+        "question": "Show findings without supporting notes for Chennai to Bangalore in March 2025",
+        "expected_weeks": [
+          "2025-03-10",
+          "2025-03-17"
+        ],
+        "actual_weeks": [
+          "2025-03-03",
+          "2025-03-10",
+          "2025-03-17"
+        ],
+        "passed": false,
+        "answer": "Chennai-Bangalore \u00b7 March 2025: 5 observed route-weeks; 3 unusual, 1 with supporting context and 2 unexplained. These are saved findings, not proof of causation. Months are grouped by the week's Monday."
+      },
+      {
+        "question": "Show findings that are not unexplained for Chennai to Bangalore in March 2025",
+        "expected_weeks": [
+          "2025-03-03"
+        ],
+        "actual_weeks": [
+          "2025-03-10",
+          "2025-03-17"
+        ],
+        "passed": false,
+        "answer": "Chennai-Bangalore \u00b7 March 2025: 5 observed route-weeks; 3 unusual, 1 with supporting context and 2 unexplained. These are saved findings, not proof of causation. Months are grouped by the week's Monday."
+      },
+      {
+        "question": "Which increases were unjustified for Chennai to Bangalore in March 2025?",
+        "expected_weeks": [
+          "2025-03-10",
+          "2025-03-17"
+        ],
+        "actual_weeks": [
+          "2025-03-03",
+          "2025-03-10",
+          "2025-03-17"
+        ],
+        "passed": false,
+        "answer": "Chennai-Bangalore \u00b7 March 2025: 5 observed route-weeks; 3 unusual, 1 with supporting context and 2 unexplained. These are saved findings, not proof of causation. Months are grouped by the week's Monday."
+      }
+    ]
+  },
+  "limitations": [
+    "Manual citation labels cover the supplied dataset only.",
+    "Threshold compliance checks the declared 20% policy, not an optimal business threshold.",
+    "March 3 flood evidence covers 4 of 5 observed shipment days; contribution is supported, full-week causation is not proven.",
+    "The PDF provides no numerical weights; no hiring score is assigned."
+  ],
+  "source_sha256": {
+    "src/watchdog_ai/__init__.py": "e1402979ab1f150cb5448dd94c6eda43d6d9b870fb75a61292d2d4c45b05df35",
+    "src/watchdog_ai/__main__.py": "e0bb04d80811ecb8f9e04dff8d222d3bc0d7f5c1172345c1df1b7de8fa58cd9f",
+    "src/watchdog_ai/calculations.py": "7ab26d0cb6e585ab8a5a7c3b158a9078713419def704d4ea2f8d7f3ba4c60dd2",
+    "src/watchdog_ai/cli.py": "1ce09ab5459d6ffecbb51b2f20cdbccaa8ba716e525ff44c845e3081b44bd0c2",
+    "src/watchdog_ai/data.py": "1367e5637320b9e39a80ac279fab78b81a004262b364f8915cf7b3ffcee48e64",
+    "src/watchdog_ai/evaluation.py": "b698e02f93ffee6ae86a65f8206aafb202a09704a295c015990b468c74fad219",
+    "src/watchdog_ai/evidence.py": "361312d45337a8636cc052426c8753cc61fdc66e058ebac30626ec5bf5a4c115",
+    "src/watchdog_ai/pipeline.py": "5d13978db7670cf43125e9e5cfdac36e71f345d1bd14c4d8f6817a6dc6418cd0",
+    "src/watchdog_ai/questions.py": "949474f57731f5bd1bc4ee023fac074d26cbe198cfe011f963a147f52ec0f958",
+    "src/watchdog_ai/reproducibility.py": "b9e5a1279a211490fc6ffa6c83e9eced756e18b76d408831fe26e54c142d7b77",
+    "src/watchdog_ai/retrieval.py": "79145c9c1e9a4a10e6bfa6cb1965eb7a4e33d1a30de1f3cec5019f1727883989"
+  },
+  "audited_artifacts_sha256": {
+    "data/shipment_records.csv": "1a2b4d66c4dc694111ba37b966486b5b0650df9ec8687402f3434117b140f4b6",
+    "data/context_notes.csv": "875c57a896ac3dfac0f712f8865b287bb5d2bd5423d26e798297b74dce87e6dc",
+    "data/sample_output_format_v2.csv": "1ea902faca37bef6816e0878dc17bdb509a88f9ff9d4f101373e3af03994201f",
+    "outputs/full_analysis.csv": "1de4f56754f20295c92d23439400fca10308ecf0c186038106e7f47b78d3b641",
+    "outputs/submission.csv": "7bf97646c160325d87e34eb175b5afc29d4bb2dd85f401cc83b2cfae6bc3ef26"
+  },
+  "existing_suite": {
+    "errors": 0,
+    "failures": 0,
+    "skipped": 0,
+    "total": 88
+  },
+  "existing_labeled_evaluation": {
+    "all_cases_passed": true,
+    "cases": 30,
+    "false_justification_rate": 0.0,
+    "flagging_correct": 16,
+    "flagging_total": 16,
+    "justification_false_positives": 0,
+    "justification_precision": 1.0,
+    "justification_true_positives": 5,
+    "negative_evidence_cases": 16,
+    "passed": 30,
+    "positive_note_correct": 3,
+    "positive_note_total": 3,
+    "supporting_note_correct": 7,
+    "supporting_note_total": 7
+  },
+  "three_run_check": {
+    "runs": 3,
+    "identical": true,
+    "source_unchanged": true
+  },
+  "runtime_usage": {
+    "embedded_texts": 29,
+    "embedding_encode_calls": 2,
+    "embedding_input_tokens": 1152,
+    "embedding_token_definition": "non-padding wordpieces including special tokens, after truncation",
+    "estimated_api_cost_usd": 0.0,
+    "fallback_reason": null,
+    "generative_model": null,
+    "inference": {
+      "deterministic_algorithms": true,
+      "device": "cpu",
+      "max_seq_length": 256,
+      "normalized_embeddings": true,
+      "seed": 0,
+      "threads": 1
+    },
+    "input_tokens": 0,
+    "llm_calls": 0,
+    "model_revision": "1110a243fdf4706b3f48f1d95db1a4f5529b4d41",
+    "output_tokens": 0,
+    "pricing_assumption": "Local embedding inference; no paid API or generative model. Hardware/electricity excluded.",
+    "retrieval_method": "embedding",
+    "retrieval_model": "sentence-transformers/all-MiniLM-L6-v2",
+    "retrieval_queries": 19,
+    "scope": "Application runtime only; coding-assistant usage is not included or measured."
+  },
+  "rubric_assessment": [
+    {
+      "criterion": "Does the core logic work?",
+      "status": "pass_on_supplied_data",
+      "evidence": "Independent Decimal reference matches all 728 route-weeks, history and peers; all three supplied examples and the 8-column output schema match.",
+      "limitation": "Flags follow an explicit 20% policy; the PDF gives no numeric anomaly threshold or complete ground truth."
+    },
+    {
+      "criterion": "Did you use AI meaningfully?",
+      "status": "pass_with_generalization_limit",
+      "evidence": "Actual local MiniLM inference; expected notes rank first for all three justified rows.",
+      "limitation": "Evidence acceptance uses three strict assertion patterns. A valid paraphrase was rejected. Q&A is rule-based lookup, not generative reasoning."
+    },
+    {
+      "criterion": "Can we trust it?",
+      "status": "pass_for_audited_submission_with_caveat",
+      "evidence": "All three justified citations match source route and effective dates; all 16 unexplained rows have blank note IDs. Existing negative evidence cases have zero false justifications.",
+      "limitation": "The March 3 flood note covers 4/5 observed shipment days; its contributor explanation does not prove the full week's increase was justified."
+    },
+    {
+      "criterion": "Does it hold up on repeat?",
+      "status": "pass",
+      "evidence": "Three fresh processes compare submission, full analysis, evidence audit, usage and manifest bytes.",
+      "limitation": "Same environment and pinned dependencies; no cross-platform guarantee."
+    },
+    {
+      "criterion": "Did you run it responsibly?",
+      "status": "pass",
+      "evidence": "0 generative calls/input/output tokens and $0 API charges; embedding tokens and calls measured separately.",
+      "limitation": "Hardware, electricity and coding-assistant usage are outside runtime cost telemetry."
+    },
+    {
+      "criterion": "Is the code clean?",
+      "status": "qualitative_review_mostly_meets",
+      "evidence": "Backend validation, calculations, retrieval, evidence, CLI, evaluation and reproducibility are separate modules with tests.",
+      "limitation": "The 692-line Streamlit entry point mixes layout and orchestration; Q&A language matching is brittle. No numeric code-quality score inferred."
+    },
+    {
+      "criterion": "Can you explain your work?",
+      "status": "materials_present_live_walkthrough_not_assessed",
+      "evidence": "README, technical guide and a timed ten-minute walkthrough explain method, assumptions, checks and trade-offs.",
+      "limitation": "The candidate's own understanding and live delivery cannot be established by automated tests."
+    }
+  ],
+  "deliverables": {
+    "src/watchdog_ai/pipeline.py": true,
+    "outputs/submission.csv": true,
+    "README.md": true,
+    "reports/reproducibility.json": true,
+    "outputs/usage.json": true,
+    "docs/walkthrough.md": true
+  },
+  "evaluation_scope": "Assessment of supplied dataset and declared behavior; not the employer's hidden tests, a production accuracy estimate, or a hiring prediction.",
+  "input_provenance_note": "Shipment file matched the original attachment byte-for-byte. Original Desktop notes/template files are macOS dataless placeholders and could not be reread; checks used the committed supplied copies with recorded hashes.",
+  "assessment_artifacts_sha256": {
+    "scripts/audit_assignment.py": "fb57651904698528561292c6e5c349df21d23f235cd6c52fe8fce363dc601877",
+    "reports/verification.json": "21d9328695a099c3907a37d841bcc0e0e037dba5b105f720a1d6822e8095d046",
+    "reports/evaluation.json": "3c9c43998650632ad2717942bb1e8770955b752400eb22826bfb939cb727b9f7",
+    "reports/reproducibility.json": "eb98c90f7fd6a33cfe282dcfda6e089fac1d7ae1818b545796300e64f0ab1c4d",
+    "outputs/usage.json": "92f468ed954468cba16d1f11c37dbf3f4f5e2fe2d498cb0e52e4e7993d702358"
+  }
+}
