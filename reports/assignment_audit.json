@@ -95,8 +95,8 @@
     }
   ],
   "stretch_questions": {
-    "passed": 7,
-    "total": 7,
+    "passed": 12,
+    "total": 12,
     "probes": [
       {
         "question": "Why did Chennai to Bangalore get pricier in March 2025?",
@@ -111,7 +111,27 @@
           "2025-03-17"
         ],
         "passed": true,
-        "answer": "Chennai-Bangalore \u00b7 March 2025: 5 observed route-weeks; 3 unusual, 1 with supporting context and 2 unexplained. These are saved findings, not proof of causation. Months are grouped by the week's Monday."
+        "answer": "Chennai-Bangalore \u00b7 March 2025: 5 observed route-weeks; 3 unusual, 1 with supporting context and 2 unexplained. These are saved findings, not proof of causation. Months are grouped by the week's Monday.",
+        "interpretation": {
+          "route": "Chennai-Bangalore",
+          "year": 2025,
+          "month": 3,
+          "exact_date": null,
+          "operation": "explain",
+          "count_weeks": false,
+          "status": null,
+          "period": "March 2025",
+          "source": "full_analysis.csv"
+        },
+        "question_usage": {
+          "method": "explicit_query",
+          "embedding_calls": 0,
+          "embedding_input_tokens": 0,
+          "generative_calls": 0,
+          "generative_input_tokens": 0,
+          "generative_output_tokens": 0,
+          "api_cost_usd": 0
+        }
       },
       {
         "question": "Show unexplained findings for Chennai to Bangalore in March 2025",
@@ -124,7 +144,27 @@
           "2025-03-17"
         ],
         "passed": true,
-        "answer": "Chennai-Bangalore \u00b7 March 2025: 5 observed route-weeks; 3 unusual, 1 with supporting context and 2 unexplained. These are saved findings, not proof of causation. Months are grouped by the week's Monday. Showing 2 unexplained findings."
+        "answer": "Chennai-Bangalore \u00b7 March 2025: 5 observed route-weeks; 3 unusual, 1 with supporting context and 2 unexplained. These are saved findings, not proof of causation. Months are grouped by the week's Monday. Showing 2 unexplained findings.",
+        "interpretation": {
+          "route": "Chennai-Bangalore",
+          "year": 2025,
+          "month": 3,
+          "exact_date": null,
+          "operation": "summary",
+          "count_weeks": false,
+          "status": "unexplained",
+          "period": "March 2025",
+          "source": "full_analysis.csv"
+        },
+        "question_usage": {
+          "method": "explicit_query",
+          "embedding_calls": 0,
+          "embedding_input_tokens": 0,
+          "generative_calls": 0,
+          "generative_input_tokens": 0,
+          "generative_output_tokens": 0,
+          "api_cost_usd": 0
+        }
       },
       {
         "question": "What notes justified Ahmedabad to Mumbai in January 2025?",
@@ -135,14 +175,54 @@
           "2025-01-20"
         ],
         "passed": true,
-        "answer": "Ahmedabad-Mumbai \u00b7 January 2025: 4 observed route-weeks; 1 unusual, 1 with supporting context and 0 unexplained. These are saved findings, not proof of causation. Months are grouped by the week's Monday. Showing 1 supported findings."
+        "answer": "Ahmedabad-Mumbai \u00b7 January 2025: 4 observed route-weeks; 1 unusual, 1 with supporting context and 0 unexplained. These are saved findings, not proof of causation. Months are grouped by the week's Monday. Showing 1 supported findings.",
+        "interpretation": {
+          "route": "Ahmedabad-Mumbai",
+          "year": 2025,
+          "month": 1,
+          "exact_date": null,
+          "operation": "summary",
+          "count_weeks": false,
+          "status": "supported",
+          "period": "January 2025",
+          "source": "full_analysis.csv"
+        },
+        "question_usage": {
+          "method": "explicit_query",
+          "embedding_calls": 0,
+          "embedding_input_tokens": 0,
+          "generative_calls": 0,
+          "generative_input_tokens": 0,
+          "generative_output_tokens": 0,
+          "api_cost_usd": 0
+        }
       },
       {
         "question": "Why did Chennai to Bangalore get pricier in January 2024?",
         "expected_weeks": [],
         "actual_weeks": [],
         "passed": true,
-        "answer": "Chennai-Bangalore \u00b7 January 2024: 5 observed route-weeks; 0 unusual, 0 with supporting context and 0 unexplained. These are saved findings, not proof of causation. Months are grouped by the week's Monday. No findings match that question in this scope."
+        "answer": "Chennai-Bangalore \u00b7 January 2024: 5 observed route-weeks; 0 unusual, 0 with supporting context and 0 unexplained. These are saved findings, not proof of causation. Months are grouped by the week's Monday. No findings match that question in this scope.",
+        "interpretation": {
+          "route": "Chennai-Bangalore",
+          "year": 2024,
+          "month": 1,
+          "exact_date": null,
+          "operation": "explain",
+          "count_weeks": false,
+          "status": null,
+          "period": "January 2024",
+          "source": "full_analysis.csv"
+        },
+        "question_usage": {
+          "method": "explicit_query",
+          "embedding_calls": 0,
+          "embedding_input_tokens": 0,
+          "generative_calls": 0,
+          "generative_input_tokens": 0,
+          "generative_output_tokens": 0,
+          "api_cost_usd": 0
+        }
       },
       {
         "question": "Show findings without supporting notes for Chennai to Bangalore in March 2025",
@@ -155,7 +235,27 @@
           "2025-03-17"
         ],
         "passed": true,
-        "answer": "Chennai-Bangalore \u00b7 March 2025: 5 observed route-weeks; 3 unusual, 1 with supporting context and 2 unexplained. These are saved findings, not proof of causation. Months are grouped by the week's Monday. Showing 2 unexplained findings."
+        "answer": "Chennai-Bangalore \u00b7 March 2025: 5 observed route-weeks; 3 unusual, 1 with supporting context and 2 unexplained. These are saved findings, not proof of causation. Months are grouped by the week's Monday. Showing 2 unexplained findings.",
+        "interpretation": {
+          "route": "Chennai-Bangalore",
+          "year": 2025,
+          "month": 3,
+          "exact_date": null,
+          "operation": "summary",
+          "count_weeks": false,
+          "status": "unexplained",
+          "period": "March 2025",
+          "source": "full_analysis.csv"
+        },
+        "question_usage": {
+          "method": "explicit_query",
+          "embedding_calls": 0,
+          "embedding_input_tokens": 0,
+          "generative_calls": 0,
+          "generative_input_tokens": 0,
+          "generative_output_tokens": 0,
+          "api_cost_usd": 0
+        }
       },
       {
         "question": "Show findings that are not unexplained for Chennai to Bangalore in March 2025",
@@ -166,7 +266,27 @@
           "2025-03-03"
         ],
         "passed": true,
-        "answer": "Chennai-Bangalore \u00b7 March 2025: 5 observed route-weeks; 3 unusual, 1 with supporting context and 2 unexplained. These are saved findings, not proof of causation. Months are grouped by the week's Monday. Showing 1 supported findings."
+        "answer": "Chennai-Bangalore \u00b7 March 2025: 5 observed route-weeks; 3 unusual, 1 with supporting context and 2 unexplained. These are saved findings, not proof of causation. Months are grouped by the week's Monday. Showing 1 supported findings.",
+        "interpretation": {
+          "route": "Chennai-Bangalore",
+          "year": 2025,
+          "month": 3,
+          "exact_date": null,
+          "operation": "summary",
+          "count_weeks": false,
+          "status": "supported",
+          "period": "March 2025",
+          "source": "full_analysis.csv"
+        },
+        "question_usage": {
+          "method": "explicit_query",
+          "embedding_calls": 0,
+          "embedding_input_tokens": 0,
+          "generative_calls": 0,
+          "generative_input_tokens": 0,
+          "generative_output_tokens": 0,
+          "api_cost_usd": 0
+        }
       },
       {
         "question": "Which increases were unjustified for Chennai to Bangalore in March 2025?",
@@ -179,7 +299,194 @@
           "2025-03-17"
         ],
         "passed": true,
-        "answer": "Chennai-Bangalore \u00b7 March 2025: 5 observed route-weeks; 3 unusual, 1 with supporting context and 2 unexplained. These are saved findings, not proof of causation. Months are grouped by the week's Monday. Showing 2 unexplained findings."
+        "answer": "Chennai-Bangalore \u00b7 March 2025: 5 observed route-weeks; 3 unusual, 1 with supporting context and 2 unexplained. These are saved findings, not proof of causation. Months are grouped by the week's Monday. Showing 2 unexplained findings.",
+        "interpretation": {
+          "route": "Chennai-Bangalore",
+          "year": 2025,
+          "month": 3,
+          "exact_date": null,
+          "operation": "summary",
+          "count_weeks": false,
+          "status": "unexplained",
+          "period": "March 2025",
+          "source": "full_analysis.csv"
+        },
+        "question_usage": {
+          "method": "explicit_query",
+          "embedding_calls": 0,
+          "embedding_input_tokens": 0,
+          "generative_calls": 0,
+          "generative_input_tokens": 0,
+          "generative_output_tokens": 0,
+          "api_cost_usd": 0
+        }
+      },
+      {
+        "question": "Which shipping alerts still need someone to investigate for Chennai to Bangalore in March 2025?",
+        "expected_weeks": [
+          "2025-03-10",
+          "2025-03-17"
+        ],
+        "actual_weeks": [
+          "2025-03-10",
+          "2025-03-17"
+        ],
+        "passed": true,
+        "answer": "Chennai-Bangalore \u00b7 March 2025: 5 observed route-weeks; 3 unusual, 1 with supporting context and 2 unexplained. These are saved findings, not proof of causation. Months are grouped by the week's Monday. Showing 2 unexplained findings.",
+        "interpretation": {
+          "route": "Chennai-Bangalore",
+          "year": 2025,
+          "month": 3,
+          "exact_date": null,
+          "operation": "summary",
+          "count_weeks": false,
+          "status": "unexplained",
+          "period": "March 2025",
+          "source": "full_analysis.csv"
+        },
+        "question_usage": {
+          "method": "local_semantic_intent",
+          "model": "sentence-transformers/all-MiniLM-L6-v2",
+          "model_revision": "1110a243fdf4706b3f48f1d95db1a4f5529b4d41",
+          "embedding_calls": 2,
+          "embedding_input_tokens": 336,
+          "reference_encoding_included": true,
+          "similarity": 0.7188,
+          "margin": 0.1375,
+          "generative_calls": 0,
+          "generative_input_tokens": 0,
+          "generative_output_tokens": 0,
+          "api_cost_usd": 0
+        }
+      },
+      {
+        "question": "What pushed transport expenses upwards for Chennai to Bangalore in March 2025?",
+        "expected_weeks": [
+          "2025-03-03",
+          "2025-03-10",
+          "2025-03-17"
+        ],
+        "actual_weeks": [
+          "2025-03-03",
+          "2025-03-10",
+          "2025-03-17"
+        ],
+        "passed": true,
+        "answer": "Chennai-Bangalore \u00b7 March 2025: 5 observed route-weeks; 3 unusual, 1 with supporting context and 2 unexplained. These are saved findings, not proof of causation. Months are grouped by the week's Monday.",
+        "interpretation": {
+          "route": "Chennai-Bangalore",
+          "year": 2025,
+          "month": 3,
+          "exact_date": null,
+          "operation": "explain",
+          "count_weeks": false,
+          "status": null,
+          "period": "March 2025",
+          "source": "full_analysis.csv"
+        },
+        "question_usage": {
+          "method": "local_semantic_intent",
+          "model": "sentence-transformers/all-MiniLM-L6-v2",
+          "model_revision": "1110a243fdf4706b3f48f1d95db1a4f5529b4d41",
+          "embedding_calls": 1,
+          "embedding_input_tokens": 8,
+          "reference_encoding_included": false,
+          "similarity": 0.7378,
+          "margin": 0.0528,
+          "generative_calls": 0,
+          "generative_input_tokens": 0,
+          "generative_output_tokens": 0,
+          "api_cost_usd": 0
+        }
+      },
+      {
+        "question": "Show the increases backed by documentary context for Chennai to Bangalore in March 2025.",
+        "expected_weeks": [
+          "2025-03-03"
+        ],
+        "actual_weeks": [
+          "2025-03-03"
+        ],
+        "passed": true,
+        "answer": "Chennai-Bangalore \u00b7 March 2025: 5 observed route-weeks; 3 unusual, 1 with supporting context and 2 unexplained. These are saved findings, not proof of causation. Months are grouped by the week's Monday. Showing 1 supported findings.",
+        "interpretation": {
+          "route": "Chennai-Bangalore",
+          "year": 2025,
+          "month": 3,
+          "exact_date": null,
+          "operation": "summary",
+          "count_weeks": false,
+          "status": "supported",
+          "period": "March 2025",
+          "source": "full_analysis.csv"
+        },
+        "question_usage": {
+          "method": "local_semantic_intent",
+          "model": "sentence-transformers/all-MiniLM-L6-v2",
+          "model_revision": "1110a243fdf4706b3f48f1d95db1a4f5529b4d41",
+          "embedding_calls": 1,
+          "embedding_input_tokens": 10,
+          "reference_encoding_included": false,
+          "similarity": 0.5667,
+          "margin": 0.1839,
+          "generative_calls": 0,
+          "generative_input_tokens": 0,
+          "generative_output_tokens": 0,
+          "api_cost_usd": 0
+        }
+      },
+      {
+        "question": "Show costs for Chennai to Bangalore on 2025-03-12",
+        "expected_weeks": [
+          "2025-03-10"
+        ],
+        "actual_weeks": [
+          "2025-03-10"
+        ],
+        "passed": true,
+        "answer": "Chennai-Bangalore \u00b7 week of 2025-03-10 (date 2025-03-12): 1 observed route-weeks; 1 unusual, 0 with supporting context and 1 unexplained. These are saved findings, not proof of causation. Months are grouped by the week's Monday.",
+        "interpretation": {
+          "route": "Chennai-Bangalore",
+          "year": 2025,
+          "month": null,
+          "exact_date": "2025-03-12",
+          "operation": "costs",
+          "count_weeks": false,
+          "status": null,
+          "period": "week of 2025-03-10 (date 2025-03-12)",
+          "source": "full_analysis.csv"
+        },
+        "question_usage": {
+          "method": "explicit_query",
+          "embedding_calls": 0,
+          "embedding_input_tokens": 0,
+          "generative_calls": 0,
+          "generative_input_tokens": 0,
+          "generative_output_tokens": 0,
+          "api_cost_usd": 0
+        }
+      },
+      {
+        "question": "Tell me the cost of a cricket bat",
+        "expected_weeks": [],
+        "actual_weeks": [],
+        "passed": true,
+        "answer": "Ask about route costs, unusual increases, supporting notes, or unexplained findings. I could not interpret that question reliably.",
+        "interpretation": {},
+        "question_usage": {
+          "method": "local_semantic_intent",
+          "model": "sentence-transformers/all-MiniLM-L6-v2",
+          "model_revision": "1110a243fdf4706b3f48f1d95db1a4f5529b4d41",
+          "embedding_calls": 1,
+          "embedding_input_tokens": 10,
+          "reference_encoding_included": false,
+          "similarity": 0.4344,
+          "margin": 0.1181,
+          "generative_calls": 0,
+          "generative_input_tokens": 0,
+          "generative_output_tokens": 0,
+          "api_cost_usd": 0
+        }
       }
     ]
   },
@@ -198,7 +505,8 @@
     "src/watchdog_ai/evaluation.py": "b698e02f93ffee6ae86a65f8206aafb202a09704a295c015990b468c74fad219",
     "src/watchdog_ai/evidence.py": "f8ef4b3b386d883df3ad4fa646b8e8fe42fea6e1d0c53eb1dae5197470eb54b2",
     "src/watchdog_ai/pipeline.py": "5d13978db7670cf43125e9e5cfdac36e71f345d1bd14c4d8f6817a6dc6418cd0",
-    "src/watchdog_ai/questions.py": "2fb7f165cad5cda66e23ff8ed5883a00d0e228cfbf589344a625b272fdc085eb",
+    "src/watchdog_ai/question_language.py": "ec502fbc267637c54526ed89aeb6589b9dfb38312aae26d732a7931ce2f960bb",
+    "src/watchdog_ai/questions.py": "061d00f521ebb06be10ca279c3c2e128415925b95b9d8edccc3fcaaa771bfad3",
     "src/watchdog_ai/reproducibility.py": "b9e5a1279a211490fc6ffa6c83e9eced756e18b76d408831fe26e54c142d7b77",
     "src/watchdog_ai/retrieval.py": "79145c9c1e9a4a10e6bfa6cb1965eb7a4e33d1a30de1f3cec5019f1727883989"
   },
@@ -213,7 +521,7 @@
     "errors": 0,
     "failures": 0,
     "skipped": 0,
-    "total": 109
+    "total": 147
   },
   "existing_labeled_evaluation": {
     "all_cases_passed": true,
@@ -273,7 +581,7 @@
       "criterion": "Did you use AI meaningfully?",
       "status": "pass_with_generalization_limit",
       "evidence": "Actual local MiniLM inference; expected notes rank first for all three justified rows.",
-      "limitation": "Evidence acceptance uses reviewed patterns for three event types, including the audited festival paraphrase. General paraphrase recall is not established. Q&A is rule-based lookup, not generative reasoning."
+      "limitation": "Evidence acceptance uses reviewed patterns for three event types, including the audited festival paraphrase. General paraphrase recall is not established. Q&A adds local semantic intent routing, with deterministic scope, calculations and saved explanations; its development tests are not a production language-understanding benchmark."
     },
     {
       "criterion": "Can we trust it?",
@@ -317,8 +625,8 @@
   "evaluation_scope": "Assessment of supplied dataset and declared behavior; not the employer's hidden tests, a production accuracy estimate, or a hiring prediction.",
   "input_provenance_note": "Shipment file matched the original attachment byte-for-byte. Original Desktop notes/template files are macOS dataless placeholders and could not be reread; checks used the committed supplied copies with recorded hashes.",
   "assessment_artifacts_sha256": {
-    "scripts/audit_assignment.py": "a11a877b9a30f05ec4895f1156344b34193a7809ceb3cdce10da9c67bb6d35a1",
-    "reports/verification.json": "2af77dee2eb1568c52d6d0448bfe38588fa0003856575abe6506f6a96ffba82a",
+    "scripts/audit_assignment.py": "57673999635fa7b0bd6a508faad5e9a8db95ca0a3c14cb541aed5a26b23dcce2",
+    "reports/verification.json": "97b366108c0323f42f55df96f749fa11bacbf25e7793379373ae2126cf28fe02",
     "reports/evaluation.json": "3c9c43998650632ad2717942bb1e8770955b752400eb22826bfb939cb727b9f7",
     "reports/reproducibility.json": "eb98c90f7fd6a33cfe282dcfda6e089fac1d7ae1818b545796300e64f0ab1c4d",
     "outputs/usage.json": "92f468ed954468cba16d1f11c37dbf3f4f5e2fe2d498cb0e52e4e7993d702358"

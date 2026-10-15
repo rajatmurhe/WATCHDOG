@@ -227,6 +227,20 @@ def main():
             "Which increases were unjustified for Chennai to Bangalore in March 2025?",
             {"2025-03-10", "2025-03-17"},
         ),
+        (
+            "Which shipping alerts still need someone to investigate for Chennai to Bangalore in March 2025?",
+            {"2025-03-10", "2025-03-17"},
+        ),
+        (
+            "What pushed transport expenses upwards for Chennai to Bangalore in March 2025?",
+            {"2025-03-03", "2025-03-10", "2025-03-17"},
+        ),
+        (
+            "Show the increases backed by documentary context for Chennai to Bangalore in March 2025.",
+            {"2025-03-03"},
+        ),
+        ("Show costs for Chennai to Bangalore on 2025-03-12", {"2025-03-10"}),
+        ("Tell me the cost of a cricket bat", set()),
     ]
     qa = []
     for question, expected in probes:
@@ -239,6 +253,8 @@ def main():
                 actual_weeks=sorted(actual),
                 passed=expected == actual,
                 answer=answer.text,
+                interpretation=answer.interpretation,
+                question_usage=answer.usage,
             )
         )
     paraphrased = Note(
@@ -328,7 +344,7 @@ def main():
             criterion="Did you use AI meaningfully?",
             status="pass_with_generalization_limit",
             evidence="Actual local MiniLM inference; expected notes rank first for all three justified rows.",
-            limitation="Evidence acceptance uses reviewed patterns for three event types, including the audited festival paraphrase. General paraphrase recall is not established. Q&A is rule-based lookup, not generative reasoning.",
+            limitation="Evidence acceptance uses reviewed patterns for three event types, including the audited festival paraphrase. General paraphrase recall is not established. Q&A adds local semantic intent routing, with deterministic scope, calculations and saved explanations; its development tests are not a production language-understanding benchmark.",
         ),
         dict(
             criterion="Can we trust it?",

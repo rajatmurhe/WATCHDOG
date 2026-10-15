@@ -5,7 +5,7 @@
 [![Pandas](https://img.shields.io/badge/Pandas-Analytics-150458?style=for-the-badge&logo=pandas&logoColor=white)](src/watchdog_ai/calculations.py)
 [![MiniLM](https://img.shields.io/badge/MiniLM-Local_Embeddings-FFD21E?style=for-the-badge&logo=huggingface&logoColor=black)](src/watchdog_ai/retrieval.py)
 [![Plotly](https://img.shields.io/badge/Plotly-Interactive_Charts-3F4F75?style=for-the-badge&logo=plotly&logoColor=white)](app.py)
-[![Tests](https://img.shields.io/badge/Verified_Tests-109_Passed-177568?style=for-the-badge&logo=pytest&logoColor=white)](reports/verification.json)
+[![Tests](https://img.shields.io/badge/Verified_Tests-147_Passed-177568?style=for-the-badge&logo=pytest&logoColor=white)](reports/verification.json)
 
 WATCHDOG is an explainable freight cost monitoring application built for Freight Tiger’s Software Engineering Intern (AI) case study. It analyzes shipment costs week by week, detects unusual increases, and retrieves operational notes to check whether those increases have supporting evidence.
 
@@ -43,7 +43,11 @@ Ask questions in plain English about the saved findings, such as **“Why did Ch
 
 ![WATCHDOG question answering](docs/images/questions.png)
 
-Route and year selectors provide context when omitted from a question. This deterministic question interface supports route/month/year lookup and supported or unexplained findings; it does not generate new explanations, calculate arbitrary aggregates, predict costs, or provide open-ended chat. It asks for clarification when required context is missing. No additional model or API calls are made.
+Ask in your own words, for example **“Which shipping alerts still need someone to investigate?”** The existing pinned local MiniLM model maps unfamiliar paraphrases to supported queries. Explicit scope and calculations remain deterministic; answers reproduce saved explanations and note IDs. Weak or ambiguous matches ask for clarification.
+
+You can ask for counts, highest/lowest weekly rates, weighted period cost, median weekly rate, total freight spend, and comparisons with saved historical/peer baselines. Route/year selectors supply context. Named months and ISO dates select route-weeks; **“What about April?”** reuses the preceding question's scope. Every answer shows its interpreted scope. One directional route at a time; arbitrary analysis and forecasts are outside this interface.
+
+Question embedding calls and tokens are measured in a downloadable session log, separately from the full pipeline log. References are encoded once per process and counted on that request. No generative calls or API charges.
 
 ### System Health
 
@@ -84,7 +88,7 @@ The CLI and dashboard share the same saved analysis. The ten-note collection use
 | Local semantic retrieval | Uses 384-dimensional MiniLM embeddings to rank relevant context notes. |
 | Evidence verification | Checks source fingerprints, route applicability, effective dates, and supported cost impact. |
 | Traceable explanations | Includes exact note IDs for supported verdicts and marks missing support as unexplained. |
-| Questions about findings | Plain-English lookup with explicit route/date scope, exact saved explanations, and evidence links. |
+| Questions about findings | Local semantic intent routing, scoped calculations and follow-ups, exact saved explanations, and evidence links. |
 | Review workspace | Provides interactive charts, route filters, evidence inspection, and exact CSV export. |
 | Repeatability | Compares five output artifacts across three fresh process executions. |
 
@@ -141,7 +145,7 @@ These results describe the supplied case-study dataset and saved verification re
 | Input coverage | 2,940 shipments, 7 routes, 104 weeks |
 | Weekly analysis | 728 route-weeks |
 | Anomalies | 19 total: 3 supported, 16 unexplained |
-| Automated tests | 109 passed; zero failures, errors, or skips |
+| Automated tests | 147 passed; zero failures, errors, or skips |
 | Labeled evaluation | 30 / 30 cases passed |
 | Reproducibility | Five output files identical across three fresh runs |
 | Generative usage | Zero LLM calls and zero generative input/output tokens |

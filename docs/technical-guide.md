@@ -63,7 +63,7 @@ Only its header is read as the formatting contract.
 ## Verified results
 
 The final semantic run produces **19 anomalies: 3 supported and 16 unexplained**.
-All **109 tests pass**, with no failures or skips, including real embedding inference
+All **147 tests pass**, with no failures or skips, including real embedding inference
 and the dashboard. The three official numerical examples match. All 30 evaluation cases pass:
 16/16 detection cases, 7/7 route citation decisions (including 3/3 positive note
 matches), and zero false justifications across 16 negative support cases. These
@@ -287,16 +287,25 @@ be able to reproduce and explain its assumptions before submission.
 
 ## Questions about findings
 
-`src/watchdog_ai/questions.py` implements a deterministic, rule-based question interface over `full_analysis.csv`. It resolves explicit directional routes, month names, and years. Route/year selectors supply omitted context; explicit mentions override them. Missing or ambiguous scope prompts clarification. Month selection follows `week_of` (the Monday), not individual shipment dates.
+`questions.py` parses one directional route, year, named month or ISO date and executes a bounded query over `full_analysis.csv`. Explicit route/year mentions override selectors. Months group by the week's Monday; an ISO date selects its containing Monday week, including across New Year. Relative dates, ranges, multiple routes and conflicting filters ask for clarification.
 
-The interface returns counts and matching saved rows. It reproduces the pipeline's explanations and cited note IDs without generating new causal claims. Supported and unexplained filters operate on existing verdicts. A period with no unusual findings is reported as such even when the question presupposes an increase. Questions cannot change the underlying verdicts or outputs. Answers are invalidated if the selected full-analysis artifact changes.
+`question_language.py` uses the existing pinned MiniLM model for unfamiliar paraphrases. It embeds reference utterances for six operations (explain, unexplained, supported, summary, costs, compare) plus an unsupported category. The best per-class cosine match must reach 0.48 and exceed the runner-up by 0.045; otherwise it abstains. These are conservative development thresholds, not calibrated confidence or a measured production accuracy. The model loads only from the local cache populated by the embedding pipeline; question submission does not trigger a network download. Reference vectors are cached per process. CPU inference uses one thread, a fixed seed and deterministic algorithms, with evaluation mode. There is no sampling temperature because this is an embedding model, not a generator.
+
+Explicit status/negation phrases and arithmetic operations take precedence over semantic routing. An indirect evidence filter in a calculation can use the semantic router, but it must resolve to supported or unexplained; uncertainty stops the calculation instead of dropping the filter. A model-selected operation cannot supply routes, dates, numbers, note IDs, verdicts or new explanations. Scope is parsed separately and shown to the user. Missing-model errors are visible; explicit queries remain available. Unsupported or unrelated questions can still be misinterpreted by a similarity classifier, so the visible interpretation and conservative abstention are important limits, not a universal language-understanding guarantee.
+
+Available calculations use saved rows: counts of findings or observed route-weeks; highest/lowest weekly rates including ties; median weekly rate; total freight spend; and weighted period cost (sum freight / sum tonne-km), labeled separately from the unweighted mean of weekly rates. Comparisons reproduce the saved history/peer differences. Counts do not pretend to count individual shipments or notes. No new causal claim is generated, even if a question presupposes an increase.
+
+Follow-ups starting with “What about”, “How about”, “Same for” or “And” can reuse the last answer's route, period, operation and status filter. New explicit scope overrides inherited scope. A new standalone question does not silently inherit context. Responses are invalidated when the analysis artifact changes.
 
 Examples:
 
-- Why did Chennai to Bangalore get pricier in March 2025?
-- Show unexplained findings for Mumbai to Pune in 2025.
-- What notes justified Ahmedabad to Mumbai in January 2025?
+- Which shipping alerts still need someone to investigate for Chennai to Bangalore in March 2025?
+- What pushed transport expenses upwards for Chennai to Bangalore in March 2025?
+- What was the average cost for Mumbai to Pune in 2025?
+- What about April?
+- Compare rates with history and peers for Chennai to Bangalore in March 2025.
+- Show costs for Chennai to Bangalore on 2025-03-12.
 
-This is a limited natural-language interface, not an LLM or general language understanding. It supports one directional route, one year, and optionally one named month per question. Exact dates, relative periods, cross-route comparisons, arbitrary aggregates, and forecasts are not supported. It makes zero additional embedding or generative calls; question processing has no API charges. Tests cover actual saved explanations, missing scope, reversed/unknown routes, empty periods, explicit overrides, negated support, and evidence navigation.
+The UI exposes per-request local embedding calls, non-padding input wordpieces, model revision and similarity/margin, and downloads the session log. The first semantic request includes reference-encoding tokens and an extra encode call; later requests include query inference only. Explicit queries use zero embedding calls. Generative calls/input/output tokens and API charges are zero; local compute and development assistant usage are excluded. `outputs/usage.json` remains the full shipment pipeline log and does not absorb interactive question traffic.
 
-Status filters recognize “without supporting notes”, “unjustified”, and “not unexplained”. Complete phrases are resolved before individual words; conflicting filters and unsupported negation ask for clarification. The response states which subset is shown.
+Tests execute the real model on paraphrases separate from routing examples, check exact saved facts and citations, and repeat accepted queries three times. They also cover abstention, model failure, arithmetic with unequal exposure, date boundaries, scope overrides, follow-ups, negation, and UI session accounting. These are development regression cases, not an independent human-authored language benchmark. The assignment audit includes original Q&A checks and new paraphrases, with actual interpretation and usage recorded.

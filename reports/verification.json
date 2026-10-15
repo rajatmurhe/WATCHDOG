@@ -51,7 +51,7 @@
   "reproducibility_identical": true,
   "source_sha256": {
     ".streamlit/config.toml": "658d3c9f4dd6a2aea19a27bc9c763a12d7a7d7a0a08b4f0578a2e4f1efa6294d",
-    "app.py": "8b5c2affc94c7c3edfff5506b1690bda24a580a7e9710c27fd8c146bb55aa338",
+    "app.py": "6c9f1380494ceac8bfa18408315334e39565b80278f2a73c780d280e5420d3fb",
     "assets/dashboard.css": "eb58f8fad0f78df40fe9a9b333769bef8553f6ee1731021994666d69e9aa9c0f",
     "constraints.txt": "16fc35f3e6b3ba0b374205ebe86d9306d033a1d9933a8ceef39def1fb1731f1b",
     "pyproject.toml": "d1022f1e24ac7c920a48e30d7773870df7b7639c367c0b6b42503f3b6066527b",
@@ -65,24 +65,26 @@
     "src/watchdog_ai/evaluation.py": "b698e02f93ffee6ae86a65f8206aafb202a09704a295c015990b468c74fad219",
     "src/watchdog_ai/evidence.py": "f8ef4b3b386d883df3ad4fa646b8e8fe42fea6e1d0c53eb1dae5197470eb54b2",
     "src/watchdog_ai/pipeline.py": "5d13978db7670cf43125e9e5cfdac36e71f345d1bd14c4d8f6817a6dc6418cd0",
-    "src/watchdog_ai/questions.py": "2fb7f165cad5cda66e23ff8ed5883a00d0e228cfbf589344a625b272fdc085eb",
+    "src/watchdog_ai/question_language.py": "ec502fbc267637c54526ed89aeb6589b9dfb38312aae26d732a7931ce2f960bb",
+    "src/watchdog_ai/questions.py": "061d00f521ebb06be10ca279c3c2e128415925b95b9d8edccc3fcaaa771bfad3",
     "src/watchdog_ai/reproducibility.py": "b9e5a1279a211490fc6ffa6c83e9eced756e18b76d408831fe26e54c142d7b77",
     "src/watchdog_ai/retrieval.py": "79145c9c1e9a4a10e6bfa6cb1965eb7a4e33d1a30de1f3cec5019f1727883989",
     "tests/conftest.py": "58422e083fd6c49aa8bb92b7d8ca66570ef085e401045923d9f13ac2dfe86a5d",
     "tests/test_calculations.py": "8fad9d6b51141d552faaa319252fa3dabfd34c259116d2668ee682702eac7511",
-    "tests/test_dashboard.py": "bc48ac68a8728ce91c1356cf1e49d485ef995b577bc7839812bbe2628b613016",
+    "tests/test_dashboard.py": "baab0102cc068ea5de7805f0032480df769b182680e85965307e3ed71fff2f65",
     "tests/test_data.py": "14d4d516a6067917db00d4e3bd828500789b596172ffa2ca10a47b24cc4d41f7",
     "tests/test_evaluation.py": "5a6101f1ffe8ee982c7b1b8660bb1115db886ea28354d1a50fee22f76ed0f38e",
     "tests/test_evidence.py": "66eea48954f33d10b74cca2af67384d736fe8ac901de45230fca87d4fd1b8392",
     "tests/test_failures.py": "3b7e5754c1a24fa9b5e942fd3218061f63cea35720d7089f0faabc3c40c78058",
     "tests/test_pipeline.py": "348f2c86cc0f6264a2b207241961470847040101bb90409676c5461e6fb8d07f",
-    "tests/test_questions.py": "c4de4664582ebaf70bf0b922d491a5a69efc1bb00cee9df2adf4dab2cedebec1"
+    "tests/test_question_language.py": "835236fa65dc6953efab0c3e3dd35dec759a8d87fb5bab271db25034c5b60ad0",
+    "tests/test_questions.py": "c030916b8e1bab2f71aff3c99c854075708726796be9666dace16a08daccd5fc"
   },
   "submission_sha256": "7bf97646c160325d87e34eb175b5afc29d4bb2dd85f401cc83b2cfae6bc3ef26",
   "tests": {
     "errors": 0,
     "failures": 0,
     "skipped": 0,
-    "total": 109
+    "total": 147
   }
 }

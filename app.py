@@ -512,9 +512,9 @@ elif page == "Evidence center":
 
 elif page == "Ask WATCHDOG":
     st.info(
-        "Ask about costs, unusual increases, or supporting notes. This is a scoped, "
-        "rule-based question interface over saved results—not a general-purpose chatbot. "
-        "It uses no generative API. Explicit routes and years in your question override the selectors."
+        "Ask about costs, unusual increases, or supporting notes in your own words. "
+        "A local language model helps interpret paraphrases; answers use saved results and exact citations. "
+        "Explicit routes and years override the selectors. Follow-ups such as 'What about April?' reuse the last question's scope."
     )
     with st.form("question_form"):
         scope_columns = st.columns(2)
@@ -531,20 +531,27 @@ elif page == "Ask WATCHDOG":
         asked = st.form_submit_button("Ask WATCHDOG", type="primary")
     st.caption(
         "Examples: Why did Chennai to Bangalore get pricier in March 2025? · "
-        "Show unexplained findings for Mumbai to Pune in 2025 · "
-        "What notes justified Ahmedabad to Mumbai in January 2025?"
+        "Which shipping alerts still need someone to investigate? · "
+        "What was the average cost for Mumbai to Pune in 2025?"
     )
     if asked:
-        result = answer_question(
-            question,
-            full,
-            None if question_route == "Choose a route" else question_route,
-            None if question_year == "Choose a year" else int(question_year),
-        )
+        analysis_hash = sha256(directory / "full_analysis.csv")
+        prior = st.session_state.get("question_answer")
+        previous = prior[1].interpretation if prior and prior[2] == analysis_hash else None
+        with st.spinner("Reading your question and checking saved results…"):
+            result = answer_question(
+                question,
+                full,
+                None if question_route == "Choose a route" else question_route,
+                None if question_year == "Choose a year" else int(question_year),
+                previous=previous,
+            )
+        question_log = st.session_state.setdefault("question_usage", [])
+        question_log.append(dict(request=len(question_log) + 1, **result.usage))
         st.session_state["question_answer"] = (
             question,
             result,
-            sha256(directory / "full_analysis.csv"),
+            analysis_hash,
         )
     saved_answer = st.session_state.get("question_answer")
     if saved_answer:
@@ -556,9 +563,28 @@ elif page == "Ask WATCHDOG":
             st.write(asked_question)
             st.markdown("**Answer**")
             st.write(result.text)
+            if result.interpretation:
+                scope = result.interpretation
+                st.caption(
+                    f"Interpreted as: {scope['operation']} · {scope['route']} · {scope['period']} · "
+                    f"{scope['status'] or 'all verdicts'}. Change the question if this scope is incorrect."
+                )
             st.caption(
                 "Sources: full_analysis.csv; explanations are reproduced from the saved pipeline results."
             )
+            with st.expander("Question processing and usage"):
+                st.caption(
+                    "Embedding tokens measure local inference, including reference encoding when first needed. "
+                    "Similarity is not confidence. No generative calls or API charges. "
+                    "This session log is separate from the full pipeline's token/cost log."
+                )
+                st.json(result.usage)
+                st.download_button(
+                    "Download session usage",
+                    json.dumps(st.session_state.get("question_usage", []), indent=2),
+                    file_name="watchdog_question_usage.json",
+                    mime="application/json",
+                )
             for row in result.rows:
                 with st.expander(f"{row['route']} · {row['week_of']} · {row['verdict']}"):
                     st.write(f"Observed cost: ₹{row['cost_per_tonne_km']:.2f} / tonne-km")

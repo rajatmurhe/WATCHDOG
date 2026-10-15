@@ -82,3 +82,21 @@ def test_questions_and_evidence_navigation(dashboard):
     next(b for b in app.button if b.label == "Inspect evidence").click().run(timeout=20)
     assert app.radio(key="navigation").value == "Evidence center"
     assert app.selectbox(key="evidence_case").value == "Ahmedabad-Mumbai · 2025-01-20"
+
+
+def test_question_followup_scope_and_usage_survive_reruns(dashboard):
+    app, _ = dashboard
+    app.radio(key="navigation").set_value("Ask WATCHDOG").run(timeout=20)
+    next(t for t in app.text_input if t.label == "Your question").set_value(
+        "What was the average cost for Chennai to Bangalore in March 2025?"
+    )
+    next(b for b in app.button if b.label == "Ask WATCHDOG").click().run(timeout=20)
+    assert not app.exception
+    assert any("Weighted period cost:" in m.value for m in app.markdown)
+    next(t for t in app.text_input if t.label == "Your question").set_value("What about April?")
+    next(b for b in app.button if b.label == "Ask WATCHDOG").click().run(timeout=20)
+    assert not app.exception
+    assert any("average · Chennai-Bangalore · April 2025" in c.value for c in app.caption)
+    assert len(app.session_state["question_usage"]) == 2
+    app.run(timeout=20)
+    assert len(app.session_state["question_usage"]) == 2
